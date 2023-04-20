@@ -18,3 +18,14 @@ export const getAnime = async () => {
 export const getInfo = async (animeId) => {
     return (await fetch(`https://api.consumet.org/anime/gogoanime/info/${animeId}`)).json();
 };
+
+export const getAnimeId = async () => {
+    const query = window.location.search;
+    const urlParams = new URLSearchParams(query);
+    const animeId = urlParams.get('id');
+    return animeId;
+};
+
+export const getAnimeEpisodeLink = async (animeId) => {
+    return (await fetch(`https://api.consumet.org/anime/gogoanime/servers/${animeId}?server=vidstreaming`)).json();
+};
