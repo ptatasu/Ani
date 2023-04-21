@@ -13,12 +13,39 @@ export const getAnime = async () => {
 /**
  *
  * @param {string} animeId
- * @returns info of an anime with the provided animeId
+ * @returns info of the anime
  */
 export const getInfo = async (animeId) => {
     return (await fetch(`https://api.consumet.org/anime/gogoanime/info/${animeId}`)).json();
 };
 
+/**
+ *
+ * @param {string} animeId
+ * @returns dub info of the anime
+ */
+export const getDubInfo = async (animeId) => {
+    return (await fetch(`https://api.consumet.org/anime/gogoanime/info/${animeId}-dub`)).json();
+};
+
+/**
+ *
+ * @param {string} animeId
+ * checks the status code of the fetch request
+ * @returns 404 or 200
+ *
+ *
+ */
+export const getDubStatus = async (animeId) => {
+    const res = await fetch(`https://api.consumet.org/anime/gogoanime/info/${animeId}-dub`);
+    const data = await res.status;
+    return data;
+};
+
+/**
+ *
+ * @returns the query named id in the URL
+ */
 export const getAnimeId = async () => {
     const query = window.location.search;
     const urlParams = new URLSearchParams(query);
@@ -26,6 +53,11 @@ export const getAnimeId = async () => {
     return animeId;
 };
 
+/**
+ *
+ * @param {string} animeId
+ * @returns video streaming link of the anime
+ */
 export const getAnimeEpisodeLink = async (animeId) => {
-    return (await fetch(`https://api.consumet.org/anime/gogoanime/servers/${animeId}?server=vidstreaming`)).json();
+    return (await fetch(`https://api.consumet.org/anime/gogoanime/servers/${animeId}`)).json();
 };
