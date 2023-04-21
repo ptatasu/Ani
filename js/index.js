@@ -1,27 +1,38 @@
-import { getAnime, getInfo } from './utils.js';
+import { getAnimeList, getAnimeInfo, getInfo } from './utils.js';
+let list = '';
 
 $(document).ready(async () => {
-    const animes = await getAnime();
-    const list = animes.results;
-    // console.log(list);
     let data = '';
-    list.forEach(async (anime) => {
+    let list = '';
+    const res = await getAnimeList();
+    // console.log(res);
+    res.map(async (anime) => {
+        const animeInfo = await getAnimeInfo(anime.id);
         const info = await getInfo(anime.id);
-        // console.log(info);
-        let genres = '';
-        info.genres.map((genre) => {
-            genres += `${genre} `;
+        const genre = info.genres;
+        console.log(animeInfo);
+        genre.map((genre) => {
+            let genres = '';
+            // console.log(genre);
+            genres = `<p class="genre">${genre}</p>`;
         });
-        data += `<div class="item" id=${info.id} >
-                    <img id="poster" src="${info.image}" alt="poster_image" width="225" height="311" draggable="false"/>
-                    ${info.title} ${info.subOrDub} ${info.status} ${info.totalEpisodes} ${genres}
+        data = `<div class="genre">${genre}</div><div class="status">${info.status}</div>`;
+        if (animeInfo.hasSub === true && animeInfo.hasDub === true) {
+            list += `<div class="item sub dub" id="${animeInfo.url.slice(7)}">`;
+        } else if (animeInfo.hasDub === true) {
+            list += `<div class="item dub" id=" ${animeInfo.url.slice(7)}">`;
+        } else if (animeInfo.hasSub === true) {
+            list += `<div class="item sub" id=" ${animeInfo.url.slice(7)}">`;
+        }
+        list += `<img id="poster" src="${animeInfo.image}" alt="poster_image" width="225" height="311" draggable="false"/>
+                    <p class="title">${animeInfo.title}</p>            
+                    ${data}
+                    <p class="episodes">${animeInfo.totalEpisodes}</p>
                 </div>`;
-        // console.log(data);
-        $('.container').html(data);
+        $('.container').html(list);
     });
     $('.container').on('click', '.item', function () {
-        const animeId = $(this).attr('id');
-        // getAnimeId(animeId);
-        window.location = `info?id=${animeId}`;
+        const episodeId = $(this).attr('id');
+        window.location = `info?id=${episodeId}`;
     });
 });

@@ -1,42 +1,38 @@
-import { getAnimeId, getInfo, getDubStatus, getDubInfo } from './utils.js';
+import { getAnimeId, getAnimeInfo } from './utils.js';
 
 $(document).ready(async () => {
     const animeId = await getAnimeId();
-    const info = await getInfo(animeId);
-    const dubStatus = await getDubStatus(animeId);
-    let dubEpisodes = '';
-    let hasDub = '';
-
-    /**
-     * checks if theres a dub version of the anime
-     */
-    if (dubStatus == 200) {
-        // console.log(dubStatus);
-        const dubInfo = await getDubInfo(animeId);
-        // console.log(dubInfo);
-        hasDub = 'dub';
-        dubInfo.episodes.map((episode, index) => {
-            dubEpisodes += `<div id='${episode.id}' class='episode'>
-                            ${index + 1}
-                        </div>`;
-            // console.log(episode);
-        });
-    }
+    const animeInfo = await getAnimeInfo(animeId);
+    // console.log(animeInfo);
     let episodes = '';
-    info.episodes.map((episode, index) => {
-        episodes += `<div id='${episode.id}' class='episode'>
-                        ${index + 1}
-                    </div>`;
-        // console.log(episode);
+    animeInfo.episodes.map((episode) => {
+        episodes += `<div id='${episode.id}' class='episode sub'>
+        ${episode.number}
+        </div>`;
     });
-    const data = `  <div id='${info.id}'>
-                        <img id='poster' src='${info.image}' alt='poster_image' width='225' height='311' draggable='false' />${info.title} ${info.subOrDub} ${hasDub} ${info.status} ${info.description} ${episodes} ${dubEpisodes}
-                    </div>`;
+    animeInfo.episodes.map((episode) => {
+        if (!episode.dubId) {
+            // console.log(episode);
+        } else {
+            episodes += `<div id='${episode.dubId}' class='episode dub'>
+                            ${episode.number}
+                        </div>`;
+        }
+    });
+    const data = `<div id='details'>
+                    <img id='poster' src='${animeInfo.image}' alt='poster_image' width='225' height='311' draggable='false' />
+                    ${animeInfo.title} ${animeInfo.status} ${animeInfo.description} ${episodes}
+                </div>`;
     $('.container').html(data);
+    // if (animeInfo.hasDub == true) {
+    //     $(`#${animeInfo.id}`).addClass('dub');
+    // }
+    // if (animeInfo.hasSub == true) {
+    //     $(`#${animeInfo.id}`).addClass('sub');
+    // }
 
     $('.container').on('click', '.episode', function () {
         const episodeId = $(this).attr('id');
-        // getAnimeId(animeId);
         window.location = `watch?id=${episodeId}`;
     });
 });

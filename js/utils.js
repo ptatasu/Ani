@@ -21,29 +21,6 @@ export const getInfo = async (animeId) => {
 
 /**
  *
- * @param {string} animeId
- * @returns dub info of the anime
- */
-export const getDubInfo = async (animeId) => {
-    return (await fetch(`https://api.consumet.org/anime/gogoanime/info/${animeId}-dub`)).json();
-};
-
-/**
- *
- * @param {string} animeId
- * checks the status code of the fetch request
- * @returns 404 or 200
- *
- *
- */
-export const getDubStatus = async (animeId) => {
-    const res = await fetch(`https://api.consumet.org/anime/gogoanime/info/${animeId}-dub`);
-    const data = await res.status;
-    return data;
-};
-
-/**
- *
  * @returns the query named id in the URL
  */
 export const getAnimeId = async () => {
@@ -59,5 +36,21 @@ export const getAnimeId = async () => {
  * @returns video streaming link of the anime
  */
 export const getAnimeEpisodeLink = async (animeId) => {
-    return (await fetch(`https://api.consumet.org/anime/gogoanime/servers/${animeId}`)).json();
+    return (await fetch(`https://api.consumet.org/anime/9anime/watch/${animeId}?server=streamtape`)).json();
+};
+
+export const getAnimeInfo = async (animeId) => {
+    const info = await getInfo(animeId);
+    const animeTitle = info.title;
+    const res = await fetch(`https://api.consumet.org/anime/9anime/${animeTitle}`);
+    const data = await res.json();
+    const anime = data.results[0].id;
+    const episodeRes = await fetch(`https://api.consumet.org/anime/9anime/info/${anime}`);
+    return episodeRes.json();
+};
+
+export const getAnimeList = async () => {
+    const anime = await getAnime();
+    const res = anime.results;
+    return res;
 };
