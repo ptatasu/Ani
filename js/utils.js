@@ -30,6 +30,18 @@ export const getAnimeId = async () => {
     return animeId;
 };
 
+export const getAnimeStatus = async () => {
+    const query = window.location.search;
+    const urlParams = new URLSearchParams(query);
+    const animeId = urlParams.get('s');
+    return animeId;
+};
+export const getAnimeNames = async () => {
+    const query = window.location.search;
+    const urlParams = new URLSearchParams(query);
+    const animeId = urlParams.get('n');
+    return animeId;
+};
 /**
  *
  * @param {string} animeId
@@ -39,7 +51,7 @@ export const getAnimeEpisodeLink = async (animeId) => {
     return (await fetch(`https://api.consumet.org/anime/9anime/watch/${animeId}?server=streamtape`)).json();
 };
 
-export const getAnimeInfo = async (animeId) => {
+export const getAnimeInfos = async (animeId) => {
     const info = await getInfo(animeId);
     const animeTitle = info.title;
     const res = await fetch(`https://api.consumet.org/anime/9anime/${animeTitle}`);
@@ -49,6 +61,15 @@ export const getAnimeInfo = async (animeId) => {
     return episodeRes.json();
 };
 
+export const getAnimeInfo = async (animeId) => {
+    // const info = await getInfo(animeId);
+    // const animeTitle = info.title;
+    // const res = await fetch(`https://api.consumet.org/anime/9anime/${animeTitle}`);
+    // const data = await res.json();
+    // const anime = data.results[0].id;
+    const episodeRes = await fetch(`https://api.consumet.org/anime/9anime/info/${animeId}`);
+    return episodeRes.json();
+};
 export const getAnimeList = async () => {
     const anime = await getAnime();
     const res = anime.results;
