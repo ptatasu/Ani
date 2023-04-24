@@ -1,4 +1,4 @@
-import { getAnimeList, getAnimeInfos, getInfo } from './utils.js';
+import { getAnimeList, getAnimeInfos, getInfo, getRecentEpisodes, getRecentInfos } from './utils.js';
 
 $(document).ready(async () => {
     let chars = { ',': ' ', '"': '', '[': '', ']': '' };
@@ -17,11 +17,15 @@ $(document).ready(async () => {
         // console.log(names);
         data = `<div class="genre">Genres: ${genre}</div><div class="status">Status: ${info.status}</div>`;
         if (animeInfo.hasSub === true && animeInfo.hasDub === true) {
-            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item sub dub" id="${animeInfo.url.slice(7)}">`;
+            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item" id="${animeInfo.url.slice(7)}">
+                    <div class="sub">SUB</div>
+                    <div class="dub">DUB</div>`;
         } else if (animeInfo.hasDub === true) {
-            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item dub" id="${animeInfo.url.slice(7)}">`;
+            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item" id="${animeInfo.url.slice(7)}">
+                    <div class="dub">DUB</div>`;
         } else if (animeInfo.hasSub === true) {
-            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item sub" id="${animeInfo.url.slice(7)}">`;
+            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item" id="${animeInfo.url.slice(7)}">
+                    <div class="sub">SUB</div>`;
         }
 
         list += `<img class="poster" src="${info.image}" alt="Poster Image" srcset="">
@@ -43,11 +47,15 @@ $(document).ready(async () => {
         // console.log(names);
         data = `<div class="genre">Genres: ${genre}</div><div class="status">Status: ${info.status}</div>`;
         if (animeInfo.hasSub === true && animeInfo.hasDub === true) {
-            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item sub dub" id="${animeInfo.url.slice(7)}">`;
+            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item" id="${animeInfo.url.slice(7)}">
+                    <div class="sub">SUB</div>
+                    <div class="dub">DUB</div>`;
         } else if (animeInfo.hasDub === true) {
-            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item dub" id="${animeInfo.url.slice(7)}">`;
+            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item" id="${animeInfo.url.slice(7)}">
+                    <div class="dub">DUB</div>`;
         } else if (animeInfo.hasSub === true) {
-            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item sub" id="${animeInfo.url.slice(7)}">`;
+            list += `<div data-names="${info.otherName}" data-status="${info.status}" class="item" id="${animeInfo.url.slice(7)}">
+                    <div class="sub">SUB</div>`;
         }
 
         list += `<img class="poster" src="${info.image}" alt="Poster Image" srcset="">
@@ -56,9 +64,20 @@ $(document).ready(async () => {
                     <p class="episodes">Episodes: ${animeInfo.totalEpisodes}</p>
                 </div>`;
         $('.container').html(list);
-        console.log(list);
     });
-
+    const recent = await getRecentEpisodes();
+    let links = '';
+    recent.map(async (anime) => {
+        // console.log(anime);
+        const animeInfo = await getRecentInfos(anime.title);
+        const episode = animeInfo.episodes[anime.episodeNumber - 1];
+        if (!episode) {
+        } else {
+            links += `<div class="title">${anime.title}</div><a class="link" href="anime/watch?id=${episode.id}">Episode ${anime.episodeNumber}</a>`;
+        }
+        // console.log(links);
+        $('.recent-container').html(links);
+    });
     /**
      * onClick function
      * Redirects user to anime info whenever clicked on the top airing section

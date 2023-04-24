@@ -13,21 +13,25 @@
     <div class="logo">
         <img src="src/logo.svg" alt="AniJutsu Logo" />
     </div>
-    <div class="searchBar">
+    <div class="search-bar">
         <input class="search" type="text" placeholder="Search" />
     </div>
     <div class="profile">
-        <p id="name">James Philiph</p>
-        <img class="pfp" src="src/pfp_sample.png" alt="Profile Picture" />
+        <p id="name">Name</p>
+        <img class="pfp" src="src/sample.png" alt="Profile Picture" />
         <img class="chev" src="src/expand.svg" />
     </div>
 </nav>
 
 <body>
     <div class="main-container">
-        <h1 class="mainTitle">TOP AIRING</h1>
+        <h1 class="main-title">TOP AIRING</h1>
         <div class="container">
         </div>
+    </div>
+    <div class="side-container">
+        <h1 class="recent-title">RECENT EPISODES</h1>
+        <div class="recent-container"></div>
     </div>
 </body>
 <script src="js/index.js" type="module"></script>
