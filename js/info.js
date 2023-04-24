@@ -42,6 +42,6 @@ $(document).ready(async () => {
     $('.container').html(data);
     $('.container').on('click', '.episode', function () {
         const episodeId = $(this).attr('id');
-        window.location = `watch?id=${episodeId}`;
+        window.location = `anime/watch?id=${episodeId}`;
     });
 });

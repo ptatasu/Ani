@@ -4,8 +4,8 @@
  *
  * @returns top airing anime list
  */
-export const getAnime = async () => {
-    const res = await fetch('https://api.consumet.org/anime/gogoanime/top-airing');
+export const getAnime = async (page) => {
+    const res = await fetch(`https://api.consumet.org/anime/gogoanime/top-airing?page=${page}`);
     const data = await res.json();
     return data;
 };
@@ -70,8 +70,8 @@ export const getAnimeInfo = async (animeId) => {
     const episodeRes = await fetch(`https://api.consumet.org/anime/9anime/info/${animeId}`);
     return episodeRes.json();
 };
-export const getAnimeList = async () => {
-    const anime = await getAnime();
+export const getAnimeList = async (page) => {
+    const anime = await getAnime(page);
     const res = anime.results;
     return res;
 };
