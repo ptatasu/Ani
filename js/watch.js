@@ -6,7 +6,7 @@ $(document).ready(async () => {
     const episodeLink = await getAnimeEpisodeLink(episodeId);
     console.log(episodeLink);
     episodeLink.every((stream) => {
-        if (stream.name === 'Doodstream') {
+        if (stream.name === 'Streamsb') {
             streamLink = stream.url;
             return false;
         } else {

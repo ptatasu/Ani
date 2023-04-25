@@ -1,4 +1,4 @@
-import { getAnime, getDubInfo, getInfo } from './utils.js';
+import { getAnime, getDubInfo, getInfo, getRecent } from './utils.js';
 
 $(document).ready(async () => {
     let chars = { ',': ' ', '"': '', '[': '', ']': '' };
@@ -7,11 +7,11 @@ $(document).ready(async () => {
     const animeList = animes.results;
     // console.log(list);
     let data = '';
-    animeList.forEach(async (anime) => {
+    animeList.map(async (anime) => {
         const info = await getInfo(anime.id);
         const dubInfo = await getDubInfo(anime.id);
-        console.log(info);
-        console.log(dubInfo);
+        // console.log(info);
+        // console.log(dubInfo);
         const genres = JSON.stringify(info.genres);
         const genre = genres.replaceAll(/[,"[\]]/g, (i) => chars[i]);
         data = `<div class="genre">Genres: ${genre}</div><div class="status">Status: ${info.status}</div>`;
@@ -22,7 +22,7 @@ $(document).ready(async () => {
         } else {
             list += `<div class="sub">SUB</div>`;
         }
-        list += `<img class="poster" src="${info.image}" alt="Poster Image" srcset="">
+        list += `<img class="poster" src="${info.image}" alt="Poster Image" draggable="false" />
                     <p class="title">${info.title}</p>            
                     ${data}
                     <p class="episodes">Episodes: ${info.totalEpisodes}</p>
@@ -33,11 +33,11 @@ $(document).ready(async () => {
     const animeList2 = animes2.results;
     // console.log(list);
     let data2 = '';
-    animeList2.forEach(async (anime) => {
+    animeList2.map(async (anime) => {
         const info = await getInfo(anime.id);
         const dubInfo = await getDubInfo(anime.id);
-        console.log(info);
-        console.log(dubInfo);
+        // console.log(info);
+        // console.log(dubInfo);
         const genres = JSON.stringify(info.genres);
         const genre = genres.replaceAll(/[,"[\]]/g, (i) => chars[i]);
         data2 = `<div class="genre">Genres: ${genre}</div><div class="status">Status: ${info.status}</div>`;
@@ -48,16 +48,40 @@ $(document).ready(async () => {
         } else {
             list += `<div class="sub">SUB</div>`;
         }
-        list += `<img class="poster" src="${info.image}" alt="Poster Image" srcset="">
+        list += `<img class="poster" src="${info.image}" alt="Poster Image" draggable="false" />
                     <p class="title">${info.title}</p>            
                     ${data}
                     <p class="episodes">Episodes: ${info.totalEpisodes}</p>
                 </div>`;
         $('.container').html(list);
     });
+    const recent = await getRecent();
+    const recentAnimes = recent.results;
+    let links = '';
+    // console.log(recentAnimes);
+    recentAnimes.map(async (anime) => {
+        links += `<div class="recent-item" id="${anime.episodeId}"><img class="recent-poster" src="${anime.image}"  draggable="false" /><div class="info-container"><div class="title" href="anime/watch?id=${anime.episodeId}">${anime.title}</div><a class="link" href="anime/watch?id=${anime.episodeId}">Episode ${anime.episodeNumber}</a></div></div>`;
+        $('.recent-container').html(links);
+    });
+
+    $('.recent-container').on('click', '.recent-item', function () {
+        const animeId = $(this).attr('id');
+        console.log(animeId);
+        window.location = `anime/watch?id=${animeId}`;
+    });
+    $('.navbar').on('click', '.chev', function () {
+        if ($(this).attr('id') === 'off') {
+            $(this).attr('src', 'src/expand_less.svg');
+            $(this).attr('id', 'on');
+        } else {
+            $(this).attr('src', 'src/expand.svg');
+            $(this).attr('id', 'off');
+        }
+        console.log($(this).attr('id'));
+    });
     $('.container').on('click', '.item', function () {
         const animeId = $(this).attr('id');
         // getAnimeId(animeId);
-        window.location = `info?id=${animeId}`;
+        window.location = `anime/info?id=${animeId}`;
     });
 });

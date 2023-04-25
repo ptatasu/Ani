@@ -18,8 +18,8 @@
     </div>
     <div class="profile">
         <p id="name">Name</p>
-        <img class="pfp" src="src/sample.png" alt="Profile Picture" />
-        <img class="chev" src="src/expand.svg" />
+        <img class="pfp" src="src/sample.png" alt="Profile Picture" draggable="false" />
+        <img id="off" class="chev" src="src/expand.svg" draggable="false" />
     </div>
 </nav>
 

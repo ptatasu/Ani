@@ -141,6 +141,19 @@ body {
   width: 25%;
   margin-top: 20px;
   margin-right: 20px;
+  /* width */
+  /* Handle */
+  /* Handle on hover */
+}
+.side-container ::-webkit-scrollbar {
+  width: 5px;
+}
+.side-container ::-webkit-scrollbar-thumb {
+  background: rgb(190, 190, 190);
+  border-radius: 10px;
+}
+.side-container ::-webkit-scrollbar-thumb:hover {
+  background: grey;
 }
 .side-container .recent-title {
   background-color: var(--secondary);
@@ -153,12 +166,31 @@ body {
 .side-container .recent-container {
   margin-top: 20px;
   margin-left: 20px;
+  height: 600px;
+  overflow-y: scroll;
+  overflow-x: visible;
 }
-.side-container .recent-container .title {
+.side-container .recent-container .recent-item {
+  height: 120px;
+}
+.side-container .recent-container .recent-item .recent-poster {
+  width: 75px;
+  height: 103.5px;
+}
+.side-container .recent-container .recent-item .info-container {
+  width: 60%;
+  position: relative;
+  left: 90px;
+  bottom: 110px;
+}
+.side-container .recent-container .recent-item .info-container .title {
+  cursor: default;
+  margin-left: 80px;
   font-size: 0.875rem;
   margin: 10px 0;
 }
-.side-container .recent-container .link {
+.side-container .recent-container .recent-item .info-container .link {
+  color: var(--secondary);
   font-size: 0.75rem;
   margin-left: 10px;
 }/*# sourceMappingURL=index.css.map */

@@ -63,3 +63,11 @@ export const getAnimeId = async () => {
 export const getAnimeEpisodeLink = async (animeId) => {
     return (await fetch(`https://api.consumet.org/anime/gogoanime/servers/${animeId}`)).json();
 };
+
+/**
+ *
+ * @returns recent episodes
+ */
+export const getRecent = async () => {
+    return (await fetch(`https://api.consumet.org/anime/gogoanime/recent-episodes`)).json();
+};
