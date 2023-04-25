@@ -71,11 +71,13 @@ body {
   width: 70%;
 }
 .main-container .main-title {
+  display: flex;
+  align-items: center;
+  font-family: "Mukta", monospace;
   background-color: var(--secondary);
   padding: 0.5rem 3rem;
   height: 2.5rem;
   font-size: 1.5rem;
-  margin-bottom: 10px;
 }
 .main-container .container {
   display: grid;
@@ -118,6 +120,7 @@ body {
   border-radius: 10px;
 }
 .main-container .container .item .title {
+  font-family: "Sansita", sans-serif;
   cursor: pointer;
   font-size: 0.875rem;
   padding-bottom: 10px;
@@ -125,6 +128,7 @@ body {
 .main-container .container .item .genre,
 .main-container .container .item .status,
 .main-container .container .item .episodes {
+  font-family: "Roboto", sans-serif;
   cursor: pointer;
   text-align: left;
   font-size: 0.75rem;
@@ -156,12 +160,15 @@ body {
   background: grey;
 }
 .side-container .recent-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Mukta", monospace;
   background-color: var(--secondary);
   padding: 0.5rem 3rem;
   height: 2rem;
   font-size: 1rem;
-  margin-top: 2.5rem;
-  text-align: center;
+  margin-top: 4rem;
 }
 .side-container .recent-container {
   margin-top: 20px;
@@ -185,11 +192,13 @@ body {
 }
 .side-container .recent-container .recent-item .info-container .title {
   cursor: default;
+  font-family: "Sansita", sans-serif;
   margin-left: 80px;
   font-size: 0.875rem;
   margin: 10px 0;
 }
 .side-container .recent-container .recent-item .info-container .link {
+  font-family: "Roboto", sans-serif;
   color: var(--secondary);
   font-size: 0.75rem;
   margin-left: 10px;
