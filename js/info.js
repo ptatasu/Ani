@@ -29,9 +29,17 @@ $(document).ready(async () => {
                     </div>`;
         // console.log(episode);
     });
-    const data = `  <div id='${info.id}'>
-                        <img id='poster' src='${info.image}' alt='poster_image' width='225' height='311' draggable='false' />${info.title} ${info.subOrDub} ${hasDub} ${info.status} ${info.description} ${episodes} ${dubEpisodes}
-                    </div>`;
+    const data = `<div id='details'>
+                    <img id='poster' src='${info.image}' alt='poster_image' width='225' height='311' draggable='false' />
+                    <div class="title" style="font-family: 'Sansita', sans-serif;">${info.title}</div>
+                    <div class="description" style="font-family: 'Roboto', sans-serif;">${info.description}</div>
+                    <div class="synonyms">${info.otherName}</div>
+                    <div class="total">${info.totalEpisodes}</div>
+                    <div class="season">${info.releaseDate}</div>
+                    <div class="type">${info.type}</div>
+                    <div class="status">${info.status}</div>
+                    <div class="episodes">${episodes}${dubEpisodes}</div>
+                </div>`;
     $('.container').html(data);
 
     $('.container').on('click', '.episode', function () {
