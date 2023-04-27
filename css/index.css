@@ -6,13 +6,21 @@
   --white: #f8f8f8;
 }
 
+@font-face {
+  font-family: "Segoe UI";
+  src: url(http://localhost/anijutsu/src/fonts/SegoeUI.ttf);
+}
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: url(http://localhost/anijutsu/src/fonts/SegoeUIBold.ttf);
+}
 *,
 *:before,
 *:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 a,
@@ -62,68 +70,7 @@ body {
 }
 .navbar .profile .chev {
   height: 1.5rem;
-}
-
-.main-container {
-  position: absolute;
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 70%;
-}
-.main-container .main-title {
-  display: flex;
-  align-items: center;
-  font-family: "Mukta", monospace;
-  background-color: var(--secondary);
-  padding: 0.5rem 3rem;
-  height: 2.5rem;
-  font-size: 1.5rem;
-}
-.main-container .container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-.main-container .container .item {
-  text-align: center;
-  color: var(--white);
-}
-.main-container .container .item .sub {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.5rem;
-  position: relative;
-  z-index: 1;
-  top: 20px;
-  height: 20px;
-  width: 30px;
-  background-color: var(--darkRed);
-  cursor: default;
-}
-.main-container .container .item .dub {
-  display: flex;
-  justify-content: end;
-  padding-right: 6px;
-  align-items: center;
-  font-size: 0.5rem;
-  position: absolute;
-  height: 20px;
-  width: 54px;
-  background-color: var(--darkRed);
-  cursor: default;
-}
-.main-container .container .item .poster {
-  cursor: pointer;
-  width: 200px;
-  height: 276.4px;
-  border-radius: 10px;
-}
-.main-container .container .item .title {
-  font-family: "Sansita", sans-serif;
-  cursor: pointer;
-  font-size: 0.875rem;
-  padding-bottom: 10px;
+}/*# sourceMappingURL=index.css.map */  padding-bottom: 10px;
 }
 .main-container .container .item .genre,
 .main-container .container .item .status,

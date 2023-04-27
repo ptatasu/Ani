@@ -9,10 +9,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Roboto:wght@100;300&family=Sansita&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/info.css">
     <title>INFO</title>
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../src/logo.svg" alt="AniJutsu Logo" />
+        </div>
+        <div class="search-bar">
+            <input class="search" type="text" placeholder="Search" />
+        </div>
+        <div class="profile">
+            <p id="name">Name</p>
+            <img class="pfp" src="../src/sample.png" alt="Profile Picture" draggable="false" />
+            <img id="off" class="chev" src="../src/expand.svg" draggable="false" />
+        </div>
+    </nav>
     <div class="container"></div>
 </body>
 <script src="../js/info.js" type="module"></script>

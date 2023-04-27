@@ -1,0 +1,130 @@
+.navbar {
+  background: rgba(0, 0, 0, 0.23);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
+}
+
+.cover {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container .details {
+  width: 90%;
+  margin: 200px auto 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+.container .details .poster {
+  position: relative;
+  width: 200px;
+  height: 276.4px;
+  border-radius: 5px;
+}
+.container .details .title {
+  position: absolute;
+  top: 280px;
+  left: 310px;
+  font-size: 2.5rem;
+  font-family: "Sansita", sans-serif;
+}
+.container .details .description {
+  min-height: 150px;
+  width: 50%;
+  position: relative;
+  top: -130px;
+  left: 248px;
+}
+.container .details .description::after {
+  content: "Summary";
+  color: var(--white);
+  position: absolute;
+  top: -65px;
+  left: 62px;
+}
+.container .details .description::before {
+  display: block;
+  position: absolute;
+  top: -32px;
+  content: "";
+  width: 200px;
+  height: 2px;
+  background-color: var(--secondary);
+}
+.container .details .episodes .dub-banner,
+.container .details .episodes .sub-banner {
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  width: 100%;
+  height: 25px;
+  background-color: var(--secondary);
+  position: relative;
+}
+.container .details .episodes .sub-banner {
+  top: -50px;
+}
+.container .details .episodes .dub-banner {
+  top: -25px;
+  margin-bottom: 25px;
+}
+.container .details .episodes .sub-episodes,
+.container .details .episodes .dub-episodes {
+  position: relative;
+  top: -40px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+}
+.container .details .episodes .sub-episodes .episode,
+.container .details .episodes .dub-episodes .episode {
+  font-size: 12px;
+  display: flex;
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 5px 70px 5px 10px;
+}
+.container .details .episodes .sub-episodes .episode::before,
+.container .details .episodes .dub-episodes .episode::before {
+  position: relative;
+  top: 0;
+  left: 60px;
+  display: block;
+  content: "";
+  background-color: whitesmoke;
+  height: 15px;
+  width: 1px;
+}
+.container .details .episodes .sub-episodes .episode::after {
+  position: relative;
+  top: 0;
+  left: 60px;
+  content: "SUB";
+  font-size: 0.7rem;
+}
+.container .details .episodes .dub-episodes .episode::after {
+  position: relative;
+  top: 0;
+  left: 60px;
+  content: "DUB";
+  font-size: 0.7rem;
+}
+.container .details .side {
+  font-size: 0.8rem;
+  width: 20%;
+  position: absolute;
+  top: 440px;
+  right: 100px;
+}
+.container .details .side div {
+  margin: 10px 0;
+}
+.container .details .side div span {
+  font-family: "Segoe UI Bold", sans-serif;
+}/*# sourceMappingURL=info.css.map */
