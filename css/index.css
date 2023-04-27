@@ -1,76 +1,63 @@
-:root {
-  --black: #0b0b0b;
-  --darkRed: #3d0000;
-  --secondary: #950101;
-  --primary: #ff0000;
-  --white: #f8f8f8;
+.main-container {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 70%;
 }
-
-@font-face {
-  font-family: "Segoe UI";
-  src: url(http://localhost/anijutsu/src/fonts/SegoeUI.ttf);
+.main-container .main-title {
+  display: flex;
+  align-items: center;
+  font-family: "Mukta", monospace;
+  background-color: var(--secondary);
+  padding: 0.5rem 3rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
 }
-@font-face {
-  font-family: "Segoe UI Bold";
-  src: url(http://localhost/anijutsu/src/fonts/SegoeUIBold.ttf);
+.main-container .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-  color: inherit;
-}
-
-body {
-  background-color: var(--black);
+.main-container .container .item {
+  text-align: center;
   color: var(--white);
 }
-
-.navbar {
-  background-color: var(--secondary);
-  height: 5rem;
+.main-container .container .item .sub {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-.navbar .logo {
-  margin: 0 auto 0 100px;
-}
-.navbar .logo img {
-  height: 5rem;
-}
-.navbar .search-bar {
-  margin: 0 auto 0 auto;
-}
-.navbar .search-bar .search {
-  outline: none;
-  border: none;
-  background-color: var(--white);
-  color: var(--black);
-  padding: 0.5rem 0.5rem;
-  width: 15.625rem;
-}
-.navbar .profile {
-  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-right: 50px;
+  font-size: 0.5rem;
+  position: relative;
+  z-index: 1;
+  top: 20px;
+  height: 20px;
+  width: 30px;
+  background-color: var(--darkRed);
+  cursor: default;
 }
-.navbar .profile .pfp {
-  height: 2rem;
-  border-radius: 50%;
+.main-container .container .item .dub {
+  display: flex;
+  justify-content: end;
+  padding-right: 6px;
+  align-items: center;
+  font-size: 0.5rem;
+  position: absolute;
+  height: 20px;
+  width: 54px;
+  background-color: var(--darkRed);
+  cursor: default;
 }
-.navbar .profile .chev {
-  height: 1.5rem;
-}/*# sourceMappingURL=index.css.map */  padding-bottom: 10px;
+.main-container .container .item .poster {
+  cursor: pointer;
+  width: 200px;
+  height: 276.4px;
+  border-radius: 10px;
+}
+.main-container .container .item .title {
+  font-family: "Sansita", sans-serif;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding-bottom: 10px;
 }
 .main-container .container .item .genre,
 .main-container .container .item .status,

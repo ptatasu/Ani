@@ -15,6 +15,7 @@ $(document).ready(async () => {
      */
     if (dubStatus == 200) {
         // console.log(dubStatus);
+        dubEpisodes += `<div class='dub-banner'>DUB EPISODES</div>;`;
         const dubInfo = await getDubInfo(animeId);
         // console.log(dubInfo);
         dubInfo.episodes.map((episode, index) => {
@@ -43,7 +44,6 @@ $(document).ready(async () => {
                     <div class="episodes">
                         <div class="sub-banner">SUB EPISODES</div>
                         <div class="sub-episodes">${episodes}</div>
-                        <div class="dub-banner">DUB EPISODES</div>
                         <div class="dub-episodes">${dubEpisodes}</div>
                     </div>
                     <div class="side">
@@ -68,8 +68,8 @@ $(document).ready(async () => {
         console.log($(this).attr('id'));
     });
     $('.container').on('click', '.episode', function () {
-        const episodeId = $(this).attr('id');
-        // getAnimeId(animeId);
-        window.location = `watch?id=${episodeId}`;
+        const id = $(this).attr('id');
+        const episodeId = id.slice(animeId.length);
+        window.location = `watch?id=${animeId}&e=${episodeId}`;
     });
 });
