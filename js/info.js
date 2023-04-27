@@ -6,6 +6,7 @@ $(document).ready(async () => {
     const info = await getInfo(animeId);
     const dubStatus = await getDubStatus(animeId);
     let dubEpisodes = '';
+    let banner = '';
     // console.log(info);
     const genres = JSON.stringify(info.genres);
     const genre = genres.replaceAll(/[,"[\]]/g, (i) => chars[i]);
@@ -15,7 +16,7 @@ $(document).ready(async () => {
      */
     if (dubStatus == 200) {
         // console.log(dubStatus);
-        dubEpisodes += `<div class='dub-banner'>DUB EPISODES</div>;`;
+        banner += `<div class='dub-banner'>DUB EPISODES</div>;`;
         const dubInfo = await getDubInfo(animeId);
         // console.log(dubInfo);
         dubInfo.episodes.map((episode, index) => {
@@ -44,6 +45,7 @@ $(document).ready(async () => {
                     <div class="episodes">
                         <div class="sub-banner">SUB EPISODES</div>
                         <div class="sub-episodes">${episodes}</div>
+                        ${banner}
                         <div class="dub-episodes">${dubEpisodes}</div>
                     </div>
                     <div class="side">
