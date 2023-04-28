@@ -23,6 +23,8 @@
     <div class="search-bar">
         <input class="search" type="text" placeholder="Search" />
     </div>
+    <div class="search-items">
+    </div>
     <div class="profile">
         <p id="name">Name</p>
         <img class="pfp" src="src/sample.png" alt="Profile Picture" draggable="false" />

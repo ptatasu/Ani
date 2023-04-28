@@ -58,13 +58,13 @@ $(document).ready(async () => {
     const recent = await getRecent();
     const recentAnimes = recent.results;
     let links = '';
-    // console.log(recentAnimes);
+    console.log(recentAnimes);
     recentAnimes.map(async (anime) => {
         links += `<div class="recent-item" data-ep-id="${anime.episodeId.slice(anime.id.length)}" id="${anime.id}"><img class="recent-poster" src="${
             anime.image
-        }"  draggable="false" /><div class="info-container"><div class="title" href="anime/watch?id=${anime.episodeId}">${anime.title}</div><a class="link" href="anime/watch?id=${
-            anime.episodeId
-        }">Episode ${anime.episodeNumber}</a></div></div>`;
+        }"  draggable="false" /><div class="info-container"><div class="title">${anime.title}</div><a class="link" href="anime/watch?id=${anime.id}&e=${anime.episodeId.slice(
+            anime.id.length
+        )}">Episode ${anime.episodeNumber}</a></div></div>`;
         $('.recent-container').html(links);
     });
 
@@ -90,10 +90,32 @@ $(document).ready(async () => {
         window.location = `anime/info?id=${animeId}`;
     });
     $('.search').on('keyup', async () => {
+        const loader = ` <div class="loader"><img src="src/loader.gif" alt="loader" srcset=""></div>`;
         const query = $('.search').val();
+        let searchItem = '';
         if (query !== '') {
+            $('.search-items').css('display', 'block');
             const res = await search(query);
-            console.log(res);
+            const result = res.results;
+            result.map((item) => {
+                const style = `background-image: url(${item.image})`;
+                searchItem += `<div id="${item.id}" class="search-item">
+                                <div class="search-poster" style='${style}'></div>
+                                <div class="search-title">${item.title}</div>
+                                </div>`;
+                setTimeout(() => {
+                    $('.search-items').html(searchItem);
+                }, 1000);
+                $('.search-items').html(loader);
+            });
+            // console.log(searchItem);
+        } else {
+            $('.search-items').css('display', 'none');
         }
+    });
+    $('.search-items').on('click', '.search-item', function () {
+        const animeId = $(this).attr('id');
+        console.log(animeId);
+        window.location = `anime/info?id=${animeId}`;
     });
 });

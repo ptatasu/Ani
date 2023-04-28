@@ -1,4 +1,4 @@
-import { getAnimeId, getAnimeEpisodeLink, getEpisodeId, getInfo } from './utils.js';
+import { getAnimeId, getAnimeEpisodeLink, getEpisodeId, getInfo, search } from './utils.js';
 
 $(document).ready(async () => {
     let streamLink = '';
@@ -48,5 +48,34 @@ $(document).ready(async () => {
             $(this).attr('id', 'off');
             $('.dropdown').css('display', 'none');
         }
+    });
+    $('.search').on('keyup', async () => {
+        const loader = ` <div class="loader"><img src="../src/loader.gif" alt="loader" srcset=""></div>`;
+        const query = $('.search').val();
+        let searchItem = '';
+        if (query !== '') {
+            $('.search-items').css('display', 'block');
+            const res = await search(query);
+            const result = res.results;
+            result.map((item) => {
+                const style = `background-image: url(${item.image})`;
+                searchItem += `<div id="${item.id}" class="search-item">
+                                <div class="search-poster" style='${style}'></div>
+                                <div class="search-title">${item.title}</div>
+                                </div>`;
+                setTimeout(() => {
+                    $('.search-items').html(searchItem);
+                }, 1000);
+                $('.search-items').html(loader);
+            });
+            // console.log(searchItem);
+        } else {
+            $('.search-items').css('display', 'none');
+        }
+    });
+    $('.search-items').on('click', '.search-item', function () {
+        const animeId = $(this).attr('id');
+        // console.log(animeId);
+        window.location = `../anime/info?id=${animeId}`;
     });
 });

@@ -1,4 +1,4 @@
-import { getAnimeId, getInfo, getDubStatus, getDubInfo } from './utils.js';
+import { getAnimeId, getInfo, getDubStatus, getDubInfo, search } from './utils.js';
 
 $(document).ready(async () => {
     let chars = { ',': ', ', '"': '', '[': '', ']': '' };
@@ -74,5 +74,34 @@ $(document).ready(async () => {
         const id = $(this).attr('id');
         const episodeId = id.slice(animeId.length);
         window.location = `watch?id=${animeId}&e=${episodeId}`;
+    });
+    $('.search').on('keyup', async () => {
+        const loader = ` <div class="loader"><img src="../src/loader.gif" alt="loader" srcset=""></div>`;
+        const query = $('.search').val();
+        let searchItem = '';
+        if (query !== '') {
+            $('.search-items').css('display', 'block');
+            const res = await search(query);
+            const result = res.results;
+            result.map((item) => {
+                const style = `background-image: url(${item.image})`;
+                searchItem += `<div id="${item.id}" class="search-item">
+                                <div class="search-poster" style='${style}'></div>
+                                <div class="search-title">${item.title}</div>
+                                </div>`;
+                setTimeout(() => {
+                    $('.search-items').html(searchItem);
+                }, 1000);
+                $('.search-items').html(loader);
+            });
+            // console.log(searchItem);
+        } else {
+            $('.search-items').css('display', 'none');
+        }
+    });
+    $('.search-items').on('click', '.search-item', function () {
+        const animeId = $(this).attr('id');
+        console.log(animeId);
+        window.location = `info?id=${animeId}`;
     });
 });

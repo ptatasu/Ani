@@ -1,12 +1,14 @@
 .navbar,
-.navbar .dropdown {
+.navbar .dropdown,
+.navbar .search-items {
   background: rgba(0, 0, 0, 0.23);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.9px);
   -webkit-backdrop-filter: blur(3.9px);
 }
 .navbar ul li:hover,
-.navbar .dropdown ul li:hover {
+.navbar .dropdown ul li:hover,
+.navbar .search-items ul li:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -47,6 +49,7 @@
   min-height: 250px;
   width: 50%;
   position: relative;
+  z-index: -1;
   top: -130px;
   left: 248px;
 }
