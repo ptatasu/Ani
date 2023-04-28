@@ -1,8 +1,17 @@
-.navbar {
+.navbar,
+.navbar .dropdown {
   background: rgba(0, 0, 0, 0.23);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.9px);
   -webkit-backdrop-filter: blur(3.9px);
+}
+.navbar ul li:hover,
+.navbar .dropdown ul li:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.navbar .home:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .cover {
@@ -35,7 +44,7 @@
   font-family: "Sansita", sans-serif;
 }
 .container .details .description {
-  min-height: 150px;
+  min-height: 250px;
   width: 50%;
   position: relative;
   top: -130px;

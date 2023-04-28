@@ -1,4 +1,4 @@
-import { getAnime, getDubInfo, getInfo, getRecent } from './utils.js';
+import { getAnime, getDubInfo, getInfo, getRecent, search } from './utils.js';
 
 $(document).ready(async () => {
     let chars = { ',': ' ', '"': '', '[': '', ']': '' };
@@ -60,28 +60,40 @@ $(document).ready(async () => {
     let links = '';
     // console.log(recentAnimes);
     recentAnimes.map(async (anime) => {
-        links += `<div class="recent-item" id="${anime.episodeId}"><img class="recent-poster" src="${anime.image}"  draggable="false" /><div class="info-container"><div class="title" href="anime/watch?id=${anime.episodeId}">${anime.title}</div><a class="link" href="anime/watch?id=${anime.episodeId}">Episode ${anime.episodeNumber}</a></div></div>`;
+        links += `<div class="recent-item" data-ep-id="${anime.episodeId.slice(anime.id.length)}" id="${anime.id}"><img class="recent-poster" src="${
+            anime.image
+        }"  draggable="false" /><div class="info-container"><div class="title" href="anime/watch?id=${anime.episodeId}">${anime.title}</div><a class="link" href="anime/watch?id=${
+            anime.episodeId
+        }">Episode ${anime.episodeNumber}</a></div></div>`;
         $('.recent-container').html(links);
     });
 
     $('.recent-container').on('click', '.recent-item', function () {
         const animeId = $(this).attr('id');
+        const epId = $(this).attr('data-ep-id');
         console.log(animeId);
-        window.location = `anime/watch?id=${animeId}`;
+        window.location = `anime/watch?id=${animeId}&e=${epId}`;
     });
     $('.navbar').on('click', '.chev', function () {
         if ($(this).attr('id') === 'off') {
             $(this).attr('src', 'src/expand_less.svg');
             $(this).attr('id', 'on');
+            $('.dropdown').css('display', 'block');
         } else {
             $(this).attr('src', 'src/expand.svg');
             $(this).attr('id', 'off');
+            $('.dropdown').css('display', 'none');
         }
-        console.log($(this).attr('id'));
     });
     $('.container').on('click', '.item', function () {
         const animeId = $(this).attr('id');
-        // getAnimeId(animeId);
         window.location = `anime/info?id=${animeId}`;
+    });
+    $('.search').on('keyup', async () => {
+        const query = $('.search').val();
+        if (query !== '') {
+            const res = await search(query);
+            console.log(res);
+        }
     });
 });

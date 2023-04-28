@@ -42,10 +42,11 @@ $(document).ready(async () => {
         if ($(this).attr('id') === 'off') {
             $(this).attr('src', '../src/expand_less.svg');
             $(this).attr('id', 'on');
+            $('.dropdown').css('display', 'block');
         } else {
             $(this).attr('src', '../src/expand.svg');
             $(this).attr('id', 'off');
+            $('.dropdown').css('display', 'none');
         }
-        console.log($(this).attr('id'));
     });
 });

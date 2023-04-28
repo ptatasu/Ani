@@ -81,3 +81,10 @@ export const getAnimeEpisodeLink = async (animeId) => {
 export const getRecent = async () => {
     return (await fetch(`https://api.consumet.org/anime/gogoanime/recent-episodes`)).json();
 };
+/**
+ *
+ * @returns search results base on the query
+ */
+export const search = async (q) => {
+    return (await fetch(`https://api.consumet.org/anime/gogoanime/${q}`)).json();
+};
