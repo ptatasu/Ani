@@ -1,0 +1,166 @@
+.container {
+  width: 70%;
+  border: 1px solid white;
+  border-radius: 1vh;
+  margin: 3.125rem auto 0 auto;
+  /* background-color: var(--brown); */
+}
+.container .line {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--gray);
+  line-height: 0.1em;
+  margin: 1.25rem auto;
+  max-width: 50%;
+}
+.container .line .text-in-line {
+  background: var(--black);
+  padding: 0 0.625rem;
+  font-size: small;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+}
+.container .title {
+  font-weight: 700;
+  padding: 1.25rem 0 0 1.25rem;
+  margin-left: 4.375rem;
+}
+.container .subtext {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 300;
+  padding: 0 1.25rem;
+  margin-left: 4.375rem;
+}
+.container .buttons {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 13px 0;
+}
+.container .buttons .btn {
+  border-radius: 0.3125rem;
+  font-size: 1.25rem;
+  max-width: 18.75rem;
+  margin: 0.625rem 0.3125rem;
+  padding: 0.3125em 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.container .buttons .btn .btn-logo {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+.container .buttons .facebook-btn:hover {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0.625rem var(--facebook);
+}
+.container .buttons .facebook-btn {
+  background-color: var(--facebook);
+}
+.container .buttons .g_id_signin:hover {
+  box-shadow: 0 0 0.625rem #f2f2f2;
+  transition: all 0.3s ease;
+}
+.container .buttons .google-btn {
+  background-color: #f2f2f2;
+}
+.container .buttons .twitter-btn:hover {
+  box-shadow: 0 0 0.625rem var(--twitter);
+  transition: all 0.3s ease;
+}
+.container .buttons .twitter-btn {
+  background-color: var(--twitter);
+}
+.container .buttons .reddit-btn:hover {
+  box-shadow: 0 0 0.625rem var(--reddit);
+  transition: all 0.3s ease;
+}
+.container .buttons .reddit-btn {
+  background-color: var(--reddit);
+}
+.container .main-form {
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  grid-template-areas: "first first middleinit" "lastname lastname lastname" "email email username" "password password password" "cpassword cpassword cpassword" "terms agreement agreement" "signup signup signup" "login login login" "text text text";
+}
+.container .main-form .textbox:focus,
+.container .main-form .btn-submit:hover {
+  box-shadow: 0 0 0.625rem var(--gray);
+  transition: all 0.3s ease;
+}
+.container .main-form .textbox {
+  padding: 0.3125rem 1.25rem;
+  font-size: 1.125rem;
+  margin: 0.5rem 0.125rem;
+  background-color: var(--black);
+  outline: none;
+  border: 1px solid var(--gray);
+  border-radius: 0.3125rem;
+  cursor: text;
+}
+.container .main-form #firstname {
+  grid-area: first;
+}
+.container .main-form #middle-initial {
+  grid-area: middleinit;
+}
+.container .main-form #lastname {
+  grid-area: lastname;
+}
+.container .main-form #username {
+  grid-area: username;
+}
+.container .main-form #email {
+  grid-area: email;
+}
+.container .main-form #password {
+  grid-area: password;
+}
+.container .main-form #conf-password {
+  grid-area: cpassword;
+}
+.container .main-form #terms {
+  margin-left: 2.8125rem;
+  grid-area: terms;
+  width: 1.1875rem;
+  accent-color: var(--secondary);
+}
+.container .main-form .terms {
+  grid-area: terms;
+  margin-right: 0.3125rem;
+  text-align: right;
+}
+.container .main-form .link {
+  color: var(--secondary);
+  cursor: pointer;
+}
+.container .main-form .link:hover {
+  text-decoration: underline;
+}
+.container .main-form #agreement {
+  grid-area: agreement;
+}
+.container .main-form .btn-submit {
+  cursor: pointer;
+  color: var(--white);
+  grid-area: signup;
+  background-color: var(--black);
+  border: 1px solid var(--gray);
+  border-radius: 0.3125rem;
+  font-size: 1.25rem;
+  margin: 0.625rem auto;
+  width: 18.75rem;
+  padding: 0.3125rem 0;
+}
+.container .main-form .subtext {
+  grid-area: login;
+  margin-left: 2.8125rem;
+}
+.container .main-form .copyright {
+  grid-area: text;
+  margin: 1.875rem 0;
+}/*# sourceMappingURL=signup.css.map */

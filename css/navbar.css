@@ -4,15 +4,19 @@
   --secondary: #950101;
   --primary: #ff0000;
   --white: #f8f8f8;
+  --facebook: #4267b2;
+  --twitter: #1da1f2;
+  --reddit: #ff5700;
+  --gray: #aabfc0;
 }
 
 @font-face {
   font-family: "Segoe UI";
-  src: url(http://localhost/anijutsu/src/fonts/SegoeUI.ttf);
+  src: url(src/fonts/SegoeUI.ttf);
 }
 @font-face {
   font-family: "Segoe UI Bold";
-  src: url(http://localhost/anijutsu/src/fonts/SegoeUIBold.ttf);
+  src: url(src/fonts/SegoeUIBold.ttf);
 }
 *,
 *:before,
