@@ -2,8 +2,10 @@ import { getAnimeId, getAnimeEpisodeLink, getEpisodeId, getInfo, search, getEpis
 
 $(document).ready(async () => {
     let streamLink = '';
-    const animeId = await getAnimeId();
-    const episodeId = await getEpisodeId();
+    const id = await getAnimeId();
+    const animeId = window.atob(id);
+    const epId = await getEpisodeId();
+    const episodeId = window.atob(epId);
     const episodeNumber = await getEpisodeNumber();
     const episodeLink = await getAnimeEpisodeLink(episodeId);
     const info = await getInfo(animeId);
@@ -20,13 +22,19 @@ $(document).ready(async () => {
     let infos = '';
     // console.log(episodeNumber);
     if (episodeNumber == info.totalEpisodes) {
-        infos += `<div class="prev"><a href="watch?id=${animeId}&e=${episodeId}&n=${episodeNumber - 1}">Previous Episode</a></div>`;
-    } else if (episodeNumber < info.totalEpisodes && episodeNumber !== 1) {
-        infos += `<div class="prev"><a href="watch?id=${animeId}&e=${episodeId}&n=${episodeNumber - 1}">Previous Episode</a></div><div class="next"><a href="watch?id=${animeId}&e=${episodeId}&n=${
+        infos += `<div class="prev"><a href="watch?id=${animeId}&e=${episodeId.slice(0, episodeId.length - episodeNumber.length)}${episodeNumber - 1}&n=${
+            episodeNumber - 1
+        }">Previous Episode</a></div>`;
+    } else if (episodeNumber < info.totalEpisodes && parseInt(episodeNumber) !== 1) {
+        infos += `<div class="prev"><a href="watch?id=${animeId}&e=${episodeId.slice(0, episodeId.length - episodeNumber.length)}${episodeNumber - 1}&n=${
+            episodeNumber - 1
+        }">Previous Episode</a></div><div class="next"><a href="watch?id=${animeId}&e=${episodeId.slice(0, episodeId.length - episodeNumber.length)}${parseInt(episodeNumber) + 1}&n=${
             parseInt(episodeNumber) + 1
         }">Next Episode</a></div>`;
     } else {
-        infos = `<div class="next"><a href="watch?id=${animeId}&e=${episodeId}&n=${parseInt(episodeNumber) + 1}">Next Episode</a></div>`;
+        infos = `<div class="next"><a href="watch?id=${animeId}&e=${episodeId.slice(0, episodeId.length - episodeNumber.length)}${parseInt(episodeNumber) + 1}&n=${
+            parseInt(episodeNumber) + 1
+        }">Next Episode</a></div>`;
     }
     const type = info.type;
     console.log(info);

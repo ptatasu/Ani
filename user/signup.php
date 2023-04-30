@@ -21,7 +21,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="form-container">
         <h1 class="title">Create an Account</h1>
         <p class="subtext">You must have an account to access this website</p>
         <h2 class="line short">

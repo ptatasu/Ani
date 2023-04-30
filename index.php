@@ -28,7 +28,7 @@
     <div class="profile">
         <p id="name">Name</p>
         <img class="pfp" src="src/sample.png" alt="Profile Picture" draggable="false" />
-        <img id="off" class="chev" src="src/expand.svg" draggable="false" />
+        <img id="off" class="chev" src="src/expand.svg" alt="chev" draggable="false" />
     </div>
     <div class="dropdown">
         <ul>
@@ -42,11 +42,17 @@
 <body>
     <div class="main-container">
         <h1 class="main-title">TOP AIRING</h1>
+        <div class="loader">
+            <img src="src/loader.gif" alt="loader">
+        </div>
         <div class="container">
         </div>
     </div>
     <div class="side-container">
         <h1 class="recent-title">RECENT EPISODES</h1>
+        <div class="recent-loader">
+            <img src="src/loader.gif" alt="loader">
+        </div>
         <div class="recent-container"></div>
     </div>
 </body>

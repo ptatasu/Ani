@@ -1,4 +1,5 @@
 :root {
+  font-size: 16px;
   --black: #0b0b0b;
   --darkRed: #3d0000;
   --secondary: #950101;
@@ -12,11 +13,15 @@
 
 @font-face {
   font-family: "Segoe UI";
-  src: url(src/fonts/SegoeUI.ttf);
+  src: url(../src/fonts/SegoeUI.ttf);
 }
 @font-face {
   font-family: "Segoe UI Bold";
-  src: url(src/fonts/SegoeUIBold.ttf);
+  src: url(../src/fonts/SegoeUIBold.ttf);
+}
+@font-face {
+  font-family: "VT323";
+  src: url(../src/fonts/VT323.ttf);
 }
 *,
 *:before,
@@ -25,7 +30,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
-  transition: all 0.3s ease-in-out;
 }
 
 a,
@@ -90,10 +94,7 @@ body {
   right: 50px;
   top: 80px;
   width: 180px;
-  background: rgba(149, 1, 1, 0.19);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(5.4px);
-          backdrop-filter: blur(5.4px);
+  background-color: var(--white);
   text-align: center;
   display: none;
 }
@@ -108,22 +109,20 @@ body {
   background: rgba(149, 1, 1, 0.5);
 }
 .navbar .dropdown ul li .drop {
-  color: var(--white);
+  color: var(--black);
 }
 .navbar .search-items {
   position: absolute;
   top: 57px;
-  right: 360px;
+  right: 361px;
   width: 15.625rem;
   z-index: 2;
   text-align: center;
-  padding-top: 25px;
-  background: rgba(149, 1, 1, 0.19);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(5.4px);
-          backdrop-filter: blur(5.4px);
+  background-color: var(--white);
+  color: var(--black);
   max-height: 550px;
   overflow-y: scroll;
+  border-top: 1px solid var(--black);
   display: none;
   /* width */
   /* Handle */

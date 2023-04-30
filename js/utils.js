@@ -100,3 +100,15 @@ export const getRecent = async () => {
 export const search = async (q) => {
     return (await fetch(`https://api.consumet.org/anime/gogoanime/${q}`)).json();
 };
+
+export const random = (title) => {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    setInterval(() => {
+        title
+            .text()
+            .split('')
+            .map((letter) => letters[Math.floor(Math.random() * 26)])
+            .join('');
+    }, 30);
+    // title.text(letters[Math.floor(Math.random() * 26)]);
+};

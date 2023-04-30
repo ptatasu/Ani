@@ -83,7 +83,7 @@
   top: -50px;
 }
 .container .details .episodes .dub-banner {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 .container .details .episodes .sub-episodes,
 .container .details .episodes .dub-episodes {
@@ -92,39 +92,17 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 10px;
+  width: 70%;
+  margin: auto;
 }
 .container .details .episodes .sub-episodes .episode,
 .container .details .episodes .dub-episodes .episode {
+  justify-content: center;
   font-size: 12px;
   display: flex;
   cursor: pointer;
   border: 1px solid white;
-  padding: 5px 70px 5px 10px;
-}
-.container .details .episodes .sub-episodes .episode::before,
-.container .details .episodes .dub-episodes .episode::before {
-  position: relative;
-  top: 0;
-  left: 60px;
-  display: block;
-  content: "";
-  background-color: whitesmoke;
-  height: 15px;
-  width: 1px;
-}
-.container .details .episodes .sub-episodes .episode::after {
-  position: relative;
-  top: 0;
-  left: 60px;
-  content: "SUB";
-  font-size: 0.7rem;
-}
-.container .details .episodes .dub-episodes .episode::after {
-  position: relative;
-  top: 0;
-  left: 60px;
-  content: "DUB";
-  font-size: 0.7rem;
+  padding: 5px 10px 5px 10px;
 }
 .container .details .side {
   font-size: 0.8rem;
