@@ -7,7 +7,7 @@ $(document).ready(async () => {
     const dubStatus = await getDubStatus(animeId);
     let dubEpisodes = '';
     let banner = '';
-    // console.log(info);
+    console.log(info);
     const genres = JSON.stringify(info.genres);
     const genre = genres.replaceAll(/[,"[\]]/g, (i) => chars[i]);
     let random = Math.floor(Math.random() * 6);
@@ -71,9 +71,10 @@ $(document).ready(async () => {
         }
     });
     $('.container').on('click', '.episode', function () {
-        const id = $(this).attr('id');
-        const episodeId = id.slice(animeId.length);
-        window.location = `watch?id=${animeId}&e=${episodeId}`;
+        const episodeId = $(this).attr('id');
+        const episodeNum = episodeId.slice(episodeId.length - 9);
+        const episodeNumber = episodeNum.replaceAll(/[^0-9.]/g, '');
+        window.location = `watch?id=${animeId}&e=${episodeId}&n=${episodeNumber}`;
     });
     $('.search').on('keyup', async () => {
         const loader = ` <div class="loader"><img src="../src/loader.gif" alt="loader" srcset=""></div>`;

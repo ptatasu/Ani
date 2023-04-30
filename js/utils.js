@@ -54,6 +54,7 @@ export const getAnimeId = async () => {
     const animeId = urlParams.get('id');
     return animeId;
 };
+
 /**
  *
  * @returns the query named e in the URL
@@ -61,8 +62,19 @@ export const getAnimeId = async () => {
 export const getEpisodeId = async () => {
     const query = window.location.search;
     const urlParams = new URLSearchParams(query);
-    const animeId = urlParams.get('e');
-    return animeId;
+    const episodeId = urlParams.get('e');
+    return episodeId;
+};
+
+/**
+ *
+ * @returns the query named e in the URL
+ */
+export const getEpisodeNumber = async () => {
+    const query = window.location.search;
+    const urlParams = new URLSearchParams(query);
+    const episodeNumber = urlParams.get('n');
+    return episodeNumber;
 };
 
 /**
