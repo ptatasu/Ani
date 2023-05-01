@@ -3,7 +3,7 @@ import { getAnimeId, getInfo, getDubStatus, getDubInfo, search } from './utils.j
 $(document).ready(async () => {
     let chars = { ',': ', ', '"': '', '[': '', ']': '' };
     const id = await getAnimeId();
-    const animeId = window.atob(id);
+    const animeId = await getAnimeId();
     const info = await getInfo(animeId);
     const dubStatus = await getDubStatus(animeId);
     let dubEpisodes = '';
@@ -82,11 +82,9 @@ $(document).ready(async () => {
         }
     });
     $('.container').on('click', '.episode', function () {
-        const epId = $(this).attr('id');
-        const episodeId = window.btoa(epId);
-        const episodeNum = epId.slice(epId.length - 9);
+        const episodeId = $(this).attr('id');
+        const episodeNum = episodeId.slice(episodeId.length - 9);
         const episodeNumber = episodeNum.replaceAll(/[^0-9.]/g, '');
-        // const episodeNumber = window.btoa(epNum);
         window.location = `watch?id=${id}&e=${episodeId}&n=${episodeNumber}`;
     });
     $('.search').on('keyup', async () => {
@@ -114,8 +112,7 @@ $(document).ready(async () => {
         }
     });
     $('.search-items').on('click', '.search-item', function () {
-        const id = $(this).attr('id');
-        const animeId = window.btoa(id);
+        const animeId = $(this).attr('id');
         window.location = `info?id=${animeId}`;
     });
 });

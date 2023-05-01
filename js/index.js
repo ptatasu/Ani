@@ -1,4 +1,4 @@
-import { getAnime, getDubInfo, getInfo, getRecent, random, search } from './utils.js';
+import { getAnime, getDubInfo, getInfo, getRecent, search } from './utils.js';
 
 setTimeout(() => {
     let title = document.querySelector('.main-title');
@@ -112,8 +112,7 @@ $(document).ready(async () => {
         }
     });
     $('.container').on('click', '.item', function () {
-        const id = $(this).attr('id');
-        const animeId = window.btoa(id);
+        const animeId = $(this).attr('id');
         window.location = `anime/info?id=${animeId}`;
     });
     $('.search').on('keyup', async () => {
@@ -141,9 +140,8 @@ $(document).ready(async () => {
         }
     });
     $('.search-items').on('click', '.search-item', function () {
-        const id = $(this).attr('id');
+        const animeId = $(this).attr('id');
         // console.log(animeId);
-        const animeId = window.btoa(id);
         window.location = `anime/info?id=${animeId}`;
     });
 });

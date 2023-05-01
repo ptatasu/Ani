@@ -2,10 +2,8 @@ import { getAnimeId, getAnimeEpisodeLink, getEpisodeId, getInfo, search, getEpis
 
 $(document).ready(async () => {
     let streamLink = '';
-    const id = await getAnimeId();
-    const animeId = window.atob(id);
-    const epId = await getEpisodeId();
-    const episodeId = window.atob(epId);
+    const animeId = await getAnimeId();
+    const episodeId = await getEpisodeId();
     const episodeNumber = await getEpisodeNumber();
     const episodeLink = await getAnimeEpisodeLink(episodeId);
     const info = await getInfo(animeId);
