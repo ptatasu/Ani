@@ -86,7 +86,7 @@ $(document).ready(async () => {
     let links = '';
     // console.log(recentAnimes);
     recentAnimes.map(async (anime) => {
-        links += `<div class="recent-item" data-ep-id="${anime.episodeId.slice(anime.id.length)}" id="${anime.id}"><img class="recent-poster" src="${
+        links += `<div class="recent-item" data-ep-id="${anime.episodeId}" id="${anime.id}"><img class="recent-poster" src="${
             anime.image
         }"  draggable="false" /><div class="info-container"><div class="title">${anime.title}</div><a class="link" href="anime/watch?id=${anime.id}&e=${anime.episodeId.slice(
             anime.id.length
@@ -96,9 +96,10 @@ $(document).ready(async () => {
 
     $('.recent-container').on('click', '.recent-item', function () {
         const animeId = $(this).attr('id');
-        const epId = $(this).attr('data-ep-id');
-        console.log(animeId);
-        window.location = `anime/watch?id=${animeId}&e=${epId}`;
+        const episodeId = $(this).attr('data-ep-id');
+        const episodeNum = episodeId.slice(episodeId.length - 9);
+        const episodeNumber = episodeNum.replaceAll(/[^0-9.]/g, '');
+        window.location = `anime/watch?id=${animeId}&e=${episodeId}&n=${episodeNumber}`;
     });
     $('.navbar').on('click', '.chev', function () {
         if ($(this).attr('id') === 'off') {
@@ -111,10 +112,12 @@ $(document).ready(async () => {
             $('.dropdown').css('display', 'none');
         }
     });
+
     $('.container').on('click', '.item', function () {
         const animeId = $(this).attr('id');
         window.location = `anime/info?id=${animeId}`;
     });
+
     $('.search').on('keyup', async () => {
         const loader = ` <div class="loader"><img src="src/loader.gif" alt="loader" srcset=""></div>`;
         const query = $('.search').val();
@@ -139,6 +142,7 @@ $(document).ready(async () => {
             $('.search-items').css('display', 'none');
         }
     });
+
     $('.search-items').on('click', '.search-item', function () {
         const animeId = $(this).attr('id');
         // console.log(animeId);
