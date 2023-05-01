@@ -1,3 +1,10 @@
+<?php
+// $_SESSION['user'] = 'asda';
+if (!isset($_SESSION['user'])) {
+    header('Location: user/signin.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +39,7 @@
     </div>
     <div class="dropdown">
         <ul>
-            <li><a class="drop" href="">Account</a></li>
+            <!-- <li><a class="drop" href="">Account</a></li> -->
             <li><a class="drop" href="">About</a></li>
             <li><a class="drop" href="">Logout</a></li>
         </ul>
