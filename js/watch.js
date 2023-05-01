@@ -13,7 +13,7 @@ $(document).ready(async () => {
             streamLink = stream.url;
             return false;
         } else {
-            console.log(stream.name);
+            // console.log(stream.name);
             return true;
         }
     });
@@ -35,7 +35,7 @@ $(document).ready(async () => {
         }">Next Episode</a></div>`;
     }
     const type = info.type;
-    console.log(info);
+    // console.log(info);
     infos += `<div class="data"><img id="${info.id}" src="${info.image}" alt="poster" class="poster" style="width: 100px; height: 138px;">
     <div class="text">
         <div id="${info.id}" class="title">${info.title} - Episode ${episodeNumber}</div>

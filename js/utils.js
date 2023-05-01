@@ -100,3 +100,7 @@ export const getRecent = async () => {
 export const search = async (q) => {
     return (await fetch(`https://api.consumet.org/anime/gogoanime/${q}`)).json();
 };
+
+export const getPfp = async (seed) => {
+    return await fetch(`https://api.dicebear.com/6.x/initials/svg?seed=${seed}`);
+};

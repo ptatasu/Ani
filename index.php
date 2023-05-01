@@ -34,7 +34,13 @@ if (!isset($_SESSION['user'])) {
     </div>
     <div class="profile">
         <p id="name"><?php echo $_SESSION['user']; ?></p>
-        <img class="pfp" src="src/sample.png" alt="Profile Picture" draggable="false" />
+        <?php
+if (!isset($_SESSION['pfp'])) {
+    echo '<img class="pfp" id="pfp" src="src/initials.svg" alt="Profile Picture" draggable="false" />';
+} else {
+    echo '<img class="pfp" src="' . $_SESSION['pfp'] . '" alt="Profile Picture" draggable="false" />';
+}
+?>
         <img id="off" class="chev" src="src/expand.svg" alt="chev" draggable="false" />
     </div>
     <div class="dropdown">

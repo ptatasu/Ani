@@ -31,7 +31,7 @@
             <span class="text-in-line">Sign In with</span>
         </h2>
         <div class="buttons">
-            <div id="g_id_onload" data-client_id="366938963776-tp966sp9fggu49p0gbaff4di9e65cueo.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost/anijutsu/user/login.php" data-auto_prompt="false" data-callback="handleCredentialResponse">
+            <div id="g_id_onload" data-client_id="366938963776-tp966sp9fggu49p0gbaff4di9e65cueo.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost/anijutsu/user/signin.php" data-auto_prompt="false" data-callback="handleCredentialResponse">
             </div>
             <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with" data-size="large" data-logo_alignment="left">
             </div>

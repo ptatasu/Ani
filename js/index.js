@@ -1,4 +1,4 @@
-import { getAnime, getDubInfo, getInfo, getRecent, search } from './utils.js';
+import { getAnime, getDubInfo, getInfo, getPfp, getRecent, search } from './utils.js';
 
 setTimeout(() => {
     let title = document.querySelector('.main-title');
@@ -148,4 +148,7 @@ $(document).ready(async () => {
         // console.log(animeId);
         window.location = `anime/info?id=${animeId}`;
     });
+    const name = $('#name').text();
+    const pfp = await getPfp(name);
+    $('#pfp').attr('src', pfp.url);
 });

@@ -1,8 +1,6 @@
 <?php
 include_once 'connection.db.php';
-if (!isset($_POST['signin'])) {
-    echo 'error';
-} else {
+if (isset($_POST['signin'])) {
     $user = $_POST['user'];
     $pass = $_POST['pass'];
     $sql = 'SELECT * FROM users WHERE email = ? OR username = ?;';
@@ -23,5 +21,10 @@ if (!isset($_POST['signin'])) {
             $response = array('status' => 'error', 'msg' => 'No user found');
         }
     }
+    echo json_encode($response);
+} else if (isset($_POST['google'])) {
+    $_SESSION['user'] = $_POST['first_name'];
+    $_SESSION['pfp'] = $_POST['pfp'];
+    $response = array('status' => 'success', 'data' => $_SESSION['user'], 'pfp' => $_SESSION['pfp']);
     echo json_encode($response);
 }
