@@ -39,12 +39,12 @@
         <h2 class="line"><span class="text-in-line">or Sign In using Email/Username</span></h2>
         <form action="#" class="main-form">
             <input class="textbox" type="text" name="email" id="email" placeholder="E-mail/Username" />
-            <input class="textbox" type="text" name="password" id="password" placeholder="Password">
+            <input class="textbox" type="password" name="password" id="password" placeholder="Password">
             <input id="signup" class="btn-submit" type="submit" value="Sign In">
             <p class="subtext">No Account? <span class="link login"><a href="signup.php">Sign Up</a></span></p>
             <p class="copyright">&copy; All rights reserved.</p>
         </form>
     </div>
 </body>
-
+<script src="../js/user/signin.js" type="module"></script>
 </html>
