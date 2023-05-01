@@ -1,15 +1,13 @@
 .navbar,
-.navbar .dropdown,
 .navbar .search-items {
   background: rgba(0, 0, 0, 0.23);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.9px);
   -webkit-backdrop-filter: blur(3.9px);
 }
-.navbar ul li:hover,
-.navbar .dropdown ul li:hover,
-.navbar .search-items ul li:hover {
-  background: rgba(0, 0, 0, 0.5);
+.navbar .dropdown,
+.navbar .search-items .dropdown {
+  color: var(--white);
 }
 
 .navbar .home:hover {

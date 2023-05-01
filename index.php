@@ -1,6 +1,5 @@
 <?php
 session_start();
-// $_SESSION['user'] = 'asda';
 if (!isset($_SESSION['user'])) {
     header('Location: user/signin.php');
 }

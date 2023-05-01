@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('Location: user/signin.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,17 +33,17 @@
         <div class="search-items">
         </div>
         <div class="profile">
-            <p id="name">Name</p>
+            <p id="name"><?php echo $_SESSION['user']; ?></p>
             <img class="pfp" src="../src/sample.png" alt="Profile Picture" draggable="false" />
-            <img id="off" class="chev" src="../src/expand.svg" draggable="false" />
+            <img id="off" class="chev" src="../src/expand.svg" alt="chev" draggable="false" />
         </div>
         <div class="dropdown">
-            <ul>
-                <li><a class="drop" href="">Account</a></li>
-                <li><a class="drop" href="">About</a></li>
-                <li><a class="drop" href="">Logout</a></li>
-            </ul>
-        </div>
+        <ul>
+            <!-- <li><a class="drop" href="">Account</a></li> -->
+            <li><a class="drop" href="">About</a></li>
+            <li><a class="drop" href="../php/logout.inc.php">Logout</a></li>
+        </ul>
+    </div>
     </nav>
     <div class="container"></div>
 </body>
