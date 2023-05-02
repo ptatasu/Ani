@@ -93,6 +93,7 @@
   transition: all 0.3s ease;
 }
 .form-container .main-form .textbox {
+  color: var(--white);
   padding: 0.3125rem 1.25rem;
   font-size: 1.125rem;
   margin: 0.5rem 0.125rem;

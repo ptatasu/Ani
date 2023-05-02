@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Roboto:wght@100;300&family=Sansita&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/signup.css">
     <title>Signup</title>
@@ -39,14 +43,14 @@
             <input class="textbox" type="text" name="lastname" id="lastname" placeholder="Lastname" />
             <input class="textbox" type="text" name="email" id="email" placeholder="E-mail" />
             <input class="textbox" type="text" name="username" id="username" placeholder="Username" />
-            <input class="textbox" type="text" name="password" id="password" placeholder="Password">
-            <input class="textbox" type="text" name="conf-password" id="conf-password" placeholder="Confirm Password">
+            <input class="textbox" type="password" name="password" id="password" placeholder="Password">
+            <input class="textbox" type="password" name="conf-password" id="conf-password" placeholder="Confirm Password">
             <!-- <input type="checkbox" name="terms" id="terms"> -->
             <!-- <label class="terms" for="terms" class="">I agree to the </label>
             <span class="link">Terms and Conditions</span> -->
             <input id="signup" class="btn-submit" type="submit" value="Sign Up">
             <p class="subtext">Already have an Account? <span class="link login"><a href="signin.php">Sign in</a></span></p>
-            <p class="copyright">&copy; All rights reserved.</p>
+            <p class="copyright">All data provided is used by AniJutsu only<br>&copy; All rights reserved.</p>
         </form>
     </div>
 </body>
