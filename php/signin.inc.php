@@ -13,7 +13,7 @@ if (isset($_POST['signin'])) {
         $res = mysqli_stmt_get_result($stmt);
         if ($row = mysqli_fetch_assoc($res)) {
             if (password_verify($pass, $row['password'])) {
-                $_SESSION['user'] = $row['first_name'];
+                $_SESSION['user'] = $row['first_name'] . ' ' . $row['last_name'];
                 $response = array('status' => 'success');
             } else {
                 $response = array('status' => 'error', 'msg' => 'Wrong Password');

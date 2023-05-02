@@ -38,7 +38,7 @@ $(document).ready(async () => {
     // console.log(info);
     infos += `<div class="data"><img id="${info.id}" src="${info.image}" alt="poster" class="poster" style="width: 100px; height: 138px;">
     <div class="text">
-        <div id="${info.id}" class="title">${info.title} - Episode ${episodeNumber}</div>
+        <div id="${info.id}" class="title"><a class="title" href="info?id=${info.id}">${info.title}</a> - Episode ${episodeNumber}</div>
         <div class="status">${info.status}</div>
         <div class="type">${type.toLowerCase()}</div>
     </div></div>`;

@@ -94,7 +94,7 @@ if (isset($_POST['signup'])) {
         $passwordErr = array('status' => 'error', 'msg' => 'Password must be between 8 and 30 characters.');
     } else {
         $passwordErr = array('status' => 'success');
-        $password = $_POST['password'];
+        $pass = $_POST['password'];
         $password = password_hash($pass, PASSWORD_DEFAULT);
     }
 
@@ -106,8 +106,15 @@ if (isset($_POST['signup'])) {
     } else {
         $confPasswordErr = array('status' => 'success');
     }
+
+    if ($_POST['terms'] == 'false') {
+        $termsErr = array('status' => 'error', 'msg' => 'You must agree to Terms and Conditions');
+    } else {
+        $termsErr = array('status' => 'success');
+    }
+
     if (
-        $firstNameErr['status'] == 'success' && $lastNameErr['status'] == 'success' && $emailErr['status'] == 'success' && $userNameErr['status'] == 'success' && $passwordErr['status'] == 'success' && $confPasswordErr['status'] == 'success'
+        $firstNameErr['status'] == 'success' && $lastNameErr['status'] == 'success' && $emailErr['status'] == 'success' && $userNameErr['status'] == 'success' && $passwordErr['status'] == 'success' && $confPasswordErr['status'] == 'success' && $termsErr['status'] == 'success'
     ) {
         $first = mysqli_real_escape_string($conn, $firstName);
         $middle = mysqli_real_escape_string($conn, $_POST['middleInitial']);
@@ -118,20 +125,19 @@ if (isset($_POST['signup'])) {
         $sql = 'INSERT INTO `users`(`first_name`, `middle_initial`, `last_name`, `email`, `username`, `password`) VALUES (?, ?, ?, ?, ?, ?)';
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            echo json_encode('SQL Error');
+            $response = array('status' => 'error', 'msg' => 'SQL ERROR');
+            // echo json_encode($response);
         } else {
             mysqli_stmt_bind_param($stmt, 'ssssss', $first, $middle, $last, $eMail, $user, $password);
             mysqli_stmt_execute($stmt);
+            $response = array('status' => 'success');
+            // echo json_encode($response);
         }
-
-        echo json_encode($response);
-        $response = array('firstName' => $first, 'lastNameErr' => $last, 'middleInitial' => $middle, 'email' => $eMail, 'username' => $user, 'password' => $pswd);
-
     } else {
         // If not successful, return the error reponse
         $response = array(
             'status' => 'error', 'firstNameErr' => $firstNameErr, 'lastNameErr' => $lastNameErr,
-            'emailErr' => $emailErr, 'userNameErr' => $userNameErr, 'passwordErr' => $passwordErr, 'confPaswordErr' => $confPasswordErr,
+            'emailErr' => $emailErr, 'userNameErr' => $userNameErr, 'passwordErr' => $passwordErr, 'confPasswordErr' => $confPasswordErr, 'terms' => $termsErr,
         );
     }
 

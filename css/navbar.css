@@ -43,6 +43,14 @@ body {
   color: var(--white);
 }
 
+.border-danger {
+  border: 1px solid #ff0000;
+}
+
+.border-normal {
+  border: 1px solid var(--gray);
+}
+
 .navbar {
   background-color: var(--secondary);
   height: 5rem;
