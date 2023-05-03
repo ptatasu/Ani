@@ -2,7 +2,9 @@ footer {
     position: relative;
     top: 2200px;
 }
-
+* {
+    transition: all 0.3s ease-in-out;
+}
 .main-container {
     position: absolute;
     margin-top: 20px;
