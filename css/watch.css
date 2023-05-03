@@ -1,3 +1,8 @@
+footer {
+  position: relative;
+  margin-top: 50px;
+}
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;

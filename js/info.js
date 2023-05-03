@@ -1,4 +1,4 @@
-import { getAnimeId, getInfo, getDubStatus, getDubInfo, search } from './utils.js';
+import { getAnimeId, getInfo, getDubStatus, getDubInfo, search, getPfp } from './utils.js';
 
 $(document).ready(async () => {
     let chars = { ',': ', ', '"': '', '[': '', ']': '' };
@@ -9,7 +9,7 @@ $(document).ready(async () => {
     let dubEpisodes = '';
     let banner = '';
     let subBanner = '';
-    console.log(info);
+    // console.log(info);
     const genres = JSON.stringify(info.genres);
     const genre = genres.replaceAll(/[,"[\]]/g, (i) => chars[i]);
     let random = Math.floor(Math.random() * 6);
@@ -115,4 +115,7 @@ $(document).ready(async () => {
         const animeId = $(this).attr('id');
         window.location = `info?id=${animeId}`;
     });
+    const name = $('#name').text();
+    const pfp = await getPfp(name);
+    $('#pfp').attr('src', pfp.url);
 });

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-    header('Location: user/signin.php');
+    header('Location: ../user/signin.php');
 }
 
 ?>
@@ -34,7 +34,14 @@ if (!isset($_SESSION['user'])) {
         </div>
         <div class="profile">
             <p id="name"><?php echo $_SESSION['user']; ?></p>
-            <img class="pfp" src="../src/sample.png" alt="Profile Picture" draggable="false" />
+            <?php
+if (!isset($_SESSION['pfp'])) {
+    echo '<img class="pfp" id="pfp" src="../src/initials.svg" alt="Profile Picture" draggable="false" />';
+} else {
+    echo '<img class="pfp" src="' . $_SESSION['pfp'] . '" alt="Profile Picture" draggable="false" />';
+}
+?>
+            <!-- <img class="pfp" src="../src/sample.png" alt="Profile Picture" draggable="false" /> -->
             <img id="off" class="chev" src="../src/expand.svg" alt="chev" draggable="false" />
         </div>
         <div class="dropdown">
@@ -46,6 +53,24 @@ if (!isset($_SESSION['user'])) {
     </div>
     </nav>
     <div class="container"></div>
+    <footer>
+        <div class="texts">
+            <div class="tagline">
+                Watch Animes even if its still airing or completed
+            </div>
+            <div class="disclaimer">
+                <p>All the Videos are not owned by AniJutsu</p>
+            </div>
+        </div>
+        <div class="socials">
+            <p class="contact-title">CONTACT US</p>
+            <div class="contact">
+                <a href=""><img src="../src/facebook.svg" alt="facebook_logo" height="50" width="50"/></a>
+                <a href=""><img src="../src/twitter.svg" alt="twitter_logo" height="50" width="50"/></a>
+                <a href=""><img src="../src/discord.svg" alt="discord_logo" height="50" width="50"/></a>
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="../js/watch.js" type="module"></script>
 

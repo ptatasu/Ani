@@ -1,3 +1,8 @@
+footer {
+  position: relative;
+  top: 2200px;
+}
+
 .main-container {
   position: absolute;
   margin-top: 20px;
@@ -135,7 +140,6 @@
   margin-left: 20px;
   height: 600px;
   overflow-y: scroll;
-  overflow-x: visible;
 }
 .side-container .recent-container .recent-item {
   height: 120px;

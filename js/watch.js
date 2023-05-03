@@ -1,4 +1,4 @@
-import { getAnimeId, getAnimeEpisodeLink, getEpisodeId, getInfo, search, getEpisodeNumber } from './utils.js';
+import { getAnimeId, getAnimeEpisodeLink, getEpisodeId, getInfo, search, getEpisodeNumber, getPfp } from './utils.js';
 
 $(document).ready(async () => {
     let streamLink = '';
@@ -85,4 +85,7 @@ $(document).ready(async () => {
         // console.log(animeId);
         window.location = `../anime/info?id=${animeId}`;
     });
+    const name = $('#name').text();
+    const pfp = await getPfp(name);
+    $('#pfp').attr('src', pfp.url);
 });

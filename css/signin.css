@@ -5,6 +5,19 @@
   margin: 3.125rem auto 0 auto;
   /* background-color: var(--brown); */
 }
+.form-container .error-container {
+  border: 1px solid var(--secondary);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 7px 30px;
+  background: rgba(149, 1, 1, 0.5);
+  box-shadow: 0 4px 30px rgba(149, 1, 1, 0.2);
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
+  border-radius: 5px;
+  display: none;
+}
 .form-container .line {
   width: 100%;
   text-align: center;
@@ -61,7 +74,6 @@
   margin: 0.5rem 0.125rem;
   background-color: var(--black);
   outline: none;
-  border: 1px solid var(--gray);
   border-radius: 0.3125rem;
   cursor: text;
   color: var(--white);

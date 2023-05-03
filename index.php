@@ -53,21 +53,39 @@ if (!isset($_SESSION['pfp'])) {
 </nav>
 
 <body>
-    <div class="main-container">
-        <h1 class="main-title">TOP AIRING</h1>
-        <div class="loader">
-            <img src="src/loader.gif" alt="loader">
+        <div class="main-container">
+            <h1 class="main-title">TOP AIRING</h1>
+            <div class="loader">
+                <img src="src/loader.gif" alt="loader">
+            </div>
+            <div class="container">
+            </div>
         </div>
-        <div class="container">
+        <div class="side-container">
+            <h1 class="recent-title">RECENT EPISODES</h1>
+            <div class="recent-loader">
+                <img src="src/loader.gif" alt="loader">
+            </div>
+            <div class="recent-container"></div>
         </div>
-    </div>
-    <div class="side-container">
-        <h1 class="recent-title">RECENT EPISODES</h1>
-        <div class="recent-loader">
-            <img src="src/loader.gif" alt="loader">
+    <footer>
+        <div class="texts">
+            <div class="tagline">
+                Watch Animes even if its still airing or completed
+            </div>
+            <div class="disclaimer">
+                <p>All the Videos are not owned by AniJutsu</p>
+            </div>
         </div>
-        <div class="recent-container"></div>
-    </div>
+        <div class="socials">
+            <p class="contact-title">CONTACT US</p>
+            <div class="contact">
+                <a href=""><img src="src/facebook.svg" alt="facebook_logo" height="50" width="50"/></a>
+                <a href=""><img src="src/twitter.svg" alt="twitter_logo" height="50" width="50"/></a>
+                <a href=""><img src="src/discord.svg" alt="discord_logo" height="50" width="50"/></a>
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="js/index.js" type="module"></script>
 

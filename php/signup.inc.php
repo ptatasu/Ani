@@ -142,5 +142,4 @@ if (isset($_POST['signup'])) {
     }
 
     echo json_encode($response);
-    // echo json_encode('nagana');
 }

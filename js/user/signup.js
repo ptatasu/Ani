@@ -199,14 +199,14 @@ $(document).ready(() => {
                     } else {
                         $('#password').removeClass('border-danger').addClass('border-normal').popover('dispose');
                     }
-                    // if there is an error in username, display error message
+                    // if there is an error in confirm password, display error message
                     if (res.confPasswordErr.status == 'error') {
                         $('#conf-password').removeClass('border-normal').addClass('border-danger');
                         $('#conf-password').popover({ placement: 'top', content: res.confPasswordErr.msg }).popover('show');
                     } else {
                         $('#conf-password').removeClass('border-danger').addClass('border-normal').popover('dispose');
                     }
-                    // if there is an error in username, display error message
+                    // if the user does not agree to the terms, display error message
                     if (res.terms.status == 'error') {
                         $('#terms').removeClass('border-normal').addClass('border-danger');
                         $('#terms').popover({ placement: 'top', content: res.terms.msg }).popover('show');
