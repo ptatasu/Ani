@@ -24,7 +24,7 @@ if (!isset($_SESSION['user'])) {
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../src/logo.svg" alt="AniJutsu Logo" />
+            <a href="../"><img src="../src/logo.png" alt="AniJutsu Logo" /></a>
         </div>
         <div class="home"><a href="/anijutsu">HOME</a></div>
         <div class="search-bar">

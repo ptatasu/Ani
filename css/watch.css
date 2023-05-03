@@ -1,56 +1,64 @@
 footer {
-  position: relative;
-  margin-top: 50px;
+    position: relative;
+    margin-top: 50px;
 }
 
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 100%;
 }
 .video-container iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 80%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
 }
 
 .next,
 .prev {
-  font-size: 1rem;
-  margin: 20px 0 0 20px;
+    font-size: 1rem;
+    margin: 20px 0 0 20px;
 }
 
 .next {
-  position: absolute;
-  bottom: 58px;
-  right: 20px;
+    position: absolute;
+    bottom: 58px;
+    right: 20px;
 }
 
 .data {
-  margin: 20px 0 0 30px;
-  display: grid;
-  grid-template-columns: 120px auto;
+    margin: 20px 0 0 30px;
+    display: grid;
+    grid-template-columns: 120px auto;
 }
 .data .poster {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 .data .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .data .text .title {
-  font-family: "Segoe UI Bold", sans-serif;
-  font-size: 1.2rem;
+    font-family: 'Segoe UI Bold', sans-serif;
+    font-size: 1.2rem;
 }
 .data .text .status,
 .data .text .type {
-  margin-left: 10px;
-  font-size: 0.9rem;
-  color: grey;
-  text-transform: capitalize;
-}/*# sourceMappingURL=watch.css.map */
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: grey;
+    text-transform: capitalize;
+} /*# sourceMappingURL=watch.css.map */
+@media only screen and (max-width: 500px) {
+    .next {
+        position: relative;
+        bottom: 40px;
+        right: 0;
+        left: 70%;
+    }
+}
