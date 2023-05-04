@@ -1,166 +1,200 @@
 .form-container {
-  width: 70%;
-  border: 1px solid white;
-  border-radius: 1vh;
-  margin: 3.125rem auto 0 auto;
-  /* background-color: var(--brown); */
+    width: 70%;
+    border: 1px solid white;
+    border-radius: 1vh;
+    margin: 3.125rem auto 0 auto;
+    /* background-color: var(--brown); */
 }
 .form-container .line {
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid var(--gray);
-  line-height: 0.1em;
-  margin: 1.25rem auto;
-  max-width: 50%;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--gray);
+    line-height: 0.1em;
+    margin: 1.25rem auto;
+    max-width: 50%;
 }
 .form-container .line .text-in-line {
-  background: var(--black);
-  padding: 0 0.625rem;
-  font-size: small;
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 400;
+    background: var(--black);
+    padding: 0 0.625rem;
+    font-size: small;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
 }
 .form-container .title {
-  font-weight: 700;
-  padding: 1.25rem 0 0 1.25rem;
-  margin-left: 4.375rem;
+    font-weight: 700;
+    padding: 1.25rem 0 0 1.25rem;
+    margin-left: 4.375rem;
 }
 .form-container .subtext {
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 300;
-  padding: 0 1.25rem;
-  margin-left: 4.375rem;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 300;
+    padding: 0 1.25rem;
+    margin-left: 4.375rem;
 }
 .form-container .buttons {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin: 13px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 13px 0;
 }
 .form-container .buttons .btn {
-  border-radius: 0.3125rem;
-  font-size: 1.25rem;
-  max-width: 18.75rem;
-  margin: 0.625rem 0.3125rem;
-  padding: 0.3125em 1.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+    border-radius: 0.3125rem;
+    font-size: 1.25rem;
+    max-width: 18.75rem;
+    margin: 0.625rem 0.3125rem;
+    padding: 0.3125em 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 .form-container .buttons .btn .btn-logo {
-  width: 1.25rem;
-  height: 1.25rem;
-  cursor: pointer;
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
 }
 .form-container .buttons .facebook-btn:hover {
-  transition: all 0.3s ease;
-  box-shadow: 0 0 0.625rem var(--facebook);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem var(--facebook);
 }
 .form-container .buttons .facebook-btn {
-  background-color: var(--facebook);
+    background-color: var(--facebook);
 }
 .form-container .buttons .g_id_signin:hover {
-  box-shadow: 0 0 0.625rem #f2f2f2;
-  transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem #f2f2f2;
+    transition: all 0.3s ease;
 }
 .form-container .buttons .google-btn {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 .form-container .buttons .twitter-btn:hover {
-  box-shadow: 0 0 0.625rem var(--twitter);
-  transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem var(--twitter);
+    transition: all 0.3s ease;
 }
 .form-container .buttons .twitter-btn {
-  background-color: var(--twitter);
+    background-color: var(--twitter);
 }
 .form-container .buttons .reddit-btn:hover {
-  box-shadow: 0 0 0.625rem var(--reddit);
-  transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem var(--reddit);
+    transition: all 0.3s ease;
 }
 .form-container .buttons .reddit-btn {
-  background-color: var(--reddit);
+    background-color: var(--reddit);
 }
 .form-container .main-form {
-  display: grid;
-  width: 80%;
-  margin: 0 auto;
-  grid-template-areas: "first first middleinit" "lastname lastname lastname" "email email username" "password password password" "cpassword cpassword cpassword" "terms agreement agreement" "signup signup signup" "login login login" "text text text";
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    grid-template-areas: 'first first middleinit' 'lastname lastname lastname' 'email email username' 'password password password' 'cpassword cpassword cpassword' 'terms agreement agreement' 'signup signup signup' 'login login login' 'text text text';
 }
 .form-container .main-form .textbox:focus,
 .form-container .main-form .btn-submit:hover {
-  box-shadow: 0 0 0.625rem var(--gray);
-  transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem var(--gray);
+    transition: all 0.3s ease;
 }
 .form-container .main-form .textbox {
-  color: var(--white);
-  padding: 0.3125rem 1.25rem;
-  font-size: 1.125rem;
-  margin: 0.5rem 0.125rem;
-  background-color: var(--black);
-  outline: none;
-  border-radius: 0.3125rem;
-  cursor: text;
+    color: var(--white);
+    padding: 0.3125rem 1.25rem;
+    font-size: 1.125rem;
+    margin: 0.5rem 0.125rem;
+    background-color: var(--black);
+    outline: none;
+    border-radius: 0.3125rem;
+    cursor: text;
 }
 .form-container .main-form #firstname {
-  grid-area: first;
+    grid-area: first;
 }
 .form-container .main-form #middle-initial {
-  grid-area: middleinit;
+    grid-area: middleinit;
 }
 .form-container .main-form #lastname {
-  grid-area: lastname;
+    grid-area: lastname;
 }
 .form-container .main-form #username {
-  grid-area: username;
+    grid-area: username;
 }
 .form-container .main-form #email {
-  grid-area: email;
+    grid-area: email;
 }
 .form-container .main-form #password {
-  grid-area: password;
+    grid-area: password;
 }
 .form-container .main-form #conf-password {
-  grid-area: cpassword;
+    grid-area: cpassword;
 }
 .form-container .main-form #terms {
-  margin-left: 2.8125rem;
-  grid-area: terms;
-  width: 1.1875rem;
-  accent-color: var(--secondary);
+    margin-left: 2.8125rem;
+    grid-area: terms;
+    width: 1.1875rem;
+    accent-color: var(--secondary);
 }
 .form-container .main-form .terms {
-  grid-area: terms;
-  margin-right: 0.3125rem;
-  text-align: right;
+    grid-area: terms;
+    margin-right: 0.3125rem;
+    text-align: right;
 }
 .form-container .main-form .link {
-  color: var(--secondary);
-  cursor: pointer;
+    color: var(--secondary);
+    cursor: pointer;
 }
 .form-container .main-form .link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .form-container .main-form #agreement {
-  grid-area: agreement;
+    grid-area: agreement;
 }
 .form-container .main-form .btn-submit {
-  cursor: pointer;
-  color: var(--white);
-  grid-area: signup;
-  background-color: var(--black);
-  border: 1px solid var(--gray);
-  border-radius: 0.3125rem;
-  font-size: 1.25rem;
-  margin: 0.625rem auto;
-  width: 18.75rem;
-  padding: 0.3125rem 0;
+    cursor: pointer;
+    color: var(--white);
+    grid-area: signup;
+    background-color: var(--black);
+    border: 1px solid var(--gray);
+    border-radius: 0.3125rem;
+    font-size: 1.25rem;
+    margin: 0.625rem auto;
+    width: 18.75rem;
+    padding: 0.3125rem 0;
 }
 .form-container .main-form .subtext {
-  grid-area: login;
-  margin-left: 2.8125rem;
+    grid-area: login;
+    margin-left: 2.8125rem;
 }
 .form-container .main-form .copyright {
-  grid-area: text;
-  margin: 1.875rem 0;
-}/*# sourceMappingURL=signup.css.map */
+    grid-area: text;
+    margin: 1.875rem 0;
+} /*# sourceMappingURL=signup.css.map */
+@media (max-width: 500px) {
+    .form-container .subtext,
+    .form-container .title {
+        margin: 0;
+        text-align: center;
+    }
+
+    .form-container .main-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-container .main-form .btn-submit {
+        margin: 0.5rem auto;
+        width: 13rem;
+    }
+    .form-container .main-form #terms {
+        position: relative;
+        left: 10px;
+        top: 15px;
+    }
+    .form-container .main-form .terms {
+        margin-right: 6rem;
+        position: relative;
+        font-size: 0.8rem;
+    }
+    .form-container .main-form .link {
+        text-align: center;
+        margin: 0;
+    }
+    .form-container .main-form .subtext {
+        margin: 0;
+        font-size: 0.8rem;
+    }
+}

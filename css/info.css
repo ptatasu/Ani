@@ -135,16 +135,18 @@
         border-radius: 5px;
     }
     .container .details .title {
-        width: 100px;
-        left: 160px;
-        font-size: 1.5rem;
+        width: 200px;
+        left: 180px;
+        font-size: 1rem;
     }
     .container .details .description {
-        min-height: 250px;
+        font-size: 0.8rem;
+        min-height: 400px;
         position: relative;
         width: 50%;
         top: -20px;
         left: 160px;
+        margin-bottom: 100px;
     }
     .container .details .description::after,
     .container .details .description::before {

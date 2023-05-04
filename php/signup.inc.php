@@ -32,16 +32,28 @@ function isValidUserName($name)
 }
 
 // Function for checking if email is existing in the database, return boolean true or false
-// function isEmailExist($email)
-// {
-//     $email = mysqli_real_escape_string($GLOBALS['conn'], $email);
-//     $CheckEmailQuery = mysqli_query($GLOBALS['conn'], "SELECT email FROM jobseeker WHERE email = '$email'");
-//     if (mysqli_num_rows($CheckEmailQuery) > 0) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
+function isEmailExist($email)
+{
+    $email = mysqli_real_escape_string($GLOBALS['conn'], $email);
+    $CheckEmailQuery = mysqli_query($GLOBALS['conn'], "SELECT * FROM users WHERE email = '$email'");
+    if (mysqli_num_rows($CheckEmailQuery) > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Function for checking if username is existing in the database, return boolean true or false
+function isUsernameExist($userName)
+{
+    $userName = mysqli_real_escape_string($GLOBALS['conn'], $userName);
+    $CheckEmailQuery = mysqli_query($GLOBALS['conn'], "SELECT * FROM users WHERE username = '$userName'");
+    if (mysqli_num_rows($CheckEmailQuery) > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 if (isset($_POST['signup'])) {
 
@@ -70,8 +82,8 @@ if (isset($_POST['signup'])) {
         $emailErr = array('status' => 'error', 'msg' => 'Email is required.');
     } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $emailErr = array('status' => 'error', 'msg' => 'Email is invalid.');
-        // elseif (isEmployer($_POST['email']) || isJobseeker($_POST['email'])) {
-        //     $emailErr = array('status' => 'error', 'msg' => 'Email is already used.');
+    } elseif (isEmailExist($_POST['email'])) {
+        $emailErr = array('status' => 'error', 'msg' => 'Email is already used.');
     } else {
         $emailErr = array('status' => 'success');
         $email = $_POST['email'];
@@ -82,6 +94,8 @@ if (isset($_POST['signup'])) {
         $userNameErr = array('status' => 'error', 'msg' => 'Username is required.');
     } else if (!isValidUserName($_POST['userName'])) {
         $userNameErr = array('status' => 'error', 'msg' => 'Only alphabets, alphanumeric, . and _ are allowed.');
+    } elseif (isUsernameExist($_POST['userName'])) {
+        $userNameErr = array('status' => 'error', 'msg' => 'Username is already used.');
     } else {
         $userNameErr = array('status' => 'success');
         $userName = sanitize_input($_POST['userName']);

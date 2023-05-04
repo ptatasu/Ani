@@ -1,113 +1,125 @@
 .form-container {
-  width: 70%;
-  border: 1px solid white;
-  border-radius: 1vh;
-  margin: 3.125rem auto 0 auto;
-  /* background-color: var(--brown); */
+    width: 70%;
+    border: 1px solid white;
+    border-radius: 1vh;
+    margin: 3.125rem auto 0 auto;
+    /* background-color: var(--brown); */
 }
 .form-container .error-container {
-  border: 1px solid var(--secondary);
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: auto;
-  padding: 7px 30px;
-  background: rgba(149, 1, 1, 0.5);
-  box-shadow: 0 4px 30px rgba(149, 1, 1, 0.2);
-  backdrop-filter: blur(3.9px);
-  -webkit-backdrop-filter: blur(3.9px);
-  border-radius: 5px;
-  display: none;
+    border: 1px solid var(--secondary);
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    padding: 7px 30px;
+    background: rgba(149, 1, 1, 0.5);
+    box-shadow: 0 4px 30px rgba(149, 1, 1, 0.2);
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(3.9px);
+    border-radius: 5px;
+    display: none;
 }
 .form-container .line {
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid var(--gray);
-  line-height: 0.1em;
-  margin: 1.25rem auto;
-  max-width: 70%;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--gray);
+    line-height: 0.1em;
+    margin: 1.25rem auto;
+    max-width: 70%;
 }
 .form-container .short {
-  width: 50%;
+    width: 50%;
 }
 .form-container .line .text-in-line {
-  background: var(--black);
-  padding: 0 0.625rem;
-  font-size: small;
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 400;
+    background: var(--black);
+    padding: 0 0.625rem;
+    font-size: small;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
 }
 .form-container .title {
-  font-weight: 700;
-  padding: 1.25rem 0 0 1.25rem;
-  margin-left: 4.375rem;
+    font-weight: 700;
+    padding: 1.25rem 0 0 1.25rem;
+    margin-left: 4.375rem;
 }
 .form-container .subtext {
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 300;
-  padding: 0 1.25rem;
-  margin-left: 4.375rem;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 300;
+    padding: 0 1.25rem;
+    margin-left: 4.375rem;
 }
 .form-container .buttons {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin: 13px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 13px 0;
 }
 .form-container .buttons .g_id_signin:hover {
-  box-shadow: 0 0 0.625rem #f2f2f2;
-  transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem #f2f2f2;
+    transition: all 0.3s ease;
 }
 .form-container .main-form {
-  display: grid;
-  width: 80%;
-  margin: 0 auto;
-  grid-template-areas: "first first middleinit" "lastname lastname lastname" "email email email" "password password password" "cpassword cpassword cpassword" "terms agreement agreement" "signup signup signup" "login login login" "text text text";
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    grid-template-areas: 'first first middleinit' 'lastname lastname lastname' 'email email email' 'password password password' 'cpassword cpassword cpassword' 'terms agreement agreement' 'signup signup signup' 'login login login' 'text text text';
 }
 .form-container .main-form .textbox:focus,
 .form-container .main-form .btn-submit:hover {
-  box-shadow: 0 0 0.625rem var(--gray);
-  transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem var(--gray);
+    transition: all 0.3s ease;
 }
 .form-container .main-form .textbox {
-  padding: 0.3125rem 1.25rem;
-  font-size: 1.125rem;
-  margin: 0.5rem 0.125rem;
-  background-color: var(--black);
-  outline: none;
-  border-radius: 0.3125rem;
-  cursor: text;
-  color: var(--white);
+    padding: 0.3125rem 1.25rem;
+    font-size: 1.125rem;
+    margin: 0.5rem 0.125rem;
+    background-color: var(--black);
+    outline: none;
+    border-radius: 0.3125rem;
+    cursor: text;
+    color: var(--white);
 }
 .form-container .main-form #email {
-  grid-area: email;
+    grid-area: email;
 }
 .form-container .main-form #password {
-  grid-area: password;
+    grid-area: password;
 }
 .form-container .main-form .link {
-  color: var(--secondary);
-  cursor: pointer;
+    color: var(--secondary);
+    cursor: pointer;
 }
 .form-container .main-form .link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .form-container .main-form .btn-submit {
-  cursor: pointer;
-  color: var(--white);
-  grid-area: signup;
-  background-color: var(--black);
-  border: 1px solid var(--gray);
-  border-radius: 0.3125rem;
-  font-size: 1.25rem;
-  margin: 0.625rem auto;
-  width: 18.75rem;
-  padding: 0.3125rem 0;
+    cursor: pointer;
+    color: var(--white);
+    grid-area: signup;
+    background-color: var(--black);
+    border: 1px solid var(--gray);
+    border-radius: 0.3125rem;
+    font-size: 1.25rem;
+    margin: 0.625rem auto;
+    width: 18.75rem;
+    padding: 0.3125rem 0;
 }
 .form-container .main-form .subtext {
-  grid-area: login;
-  margin-left: 2.8125rem;
+    grid-area: login;
+    margin-left: 2.8125rem;
 }
 .form-container .main-form .copyright {
-  grid-area: text;
-  margin: 1.875rem 0;
-}/*# sourceMappingURL=signin.css.map */
+    grid-area: text;
+    margin: 1.875rem 0;
+} /*# sourceMappingURL=signin.css.map */
+@media (max-width: 500px) {
+    .form-container .main-form .btn-submit,
+    .form-container .main-form .textbox {
+        margin: 0.5rem auto;
+        width: 13rem;
+    }
+    .form-container .subtext,
+    .form-container .title {
+        margin: 0;
+        text-align: center;
+    }
+}

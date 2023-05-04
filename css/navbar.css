@@ -216,4 +216,7 @@ footer .socials .contact a img {
     .navbar .profile #name {
         font-size: 14px;
     }
+    footer .socials .contact a {
+        padding: 0;
+    }
 }

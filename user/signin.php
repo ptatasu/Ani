@@ -27,11 +27,11 @@ if (isset($_SESSION['user'])) {
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../src/logo.svg" alt="AniJutsu Logo" />
+            <img src="../src/logo.png" alt="AniJutsu Logo" />
         </div>
-        <div class="search-bar">
+        <!-- <div class="search-bar">
             <input class="search" type="text" placeholder="Search" />
-        </div>
+        </div> -->
     </nav>
     <div class="form-container">
         <h1 class="title">Sign In</h1>
