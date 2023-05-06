@@ -1,6 +1,6 @@
 footer {
     position: relative;
-    top: 2200px;
+    opacity: 0;
 }
 * {
     transition: all 0.3s ease-in-out;
@@ -37,6 +37,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    margin-bottom: 50px;
 }
 .main-container .container .item {
     text-align: center;
@@ -99,6 +100,7 @@ footer {
     width: 25%;
     margin-top: 20px;
     margin-right: 20px;
+    overflow-x: hidden;
 }
 .side-container ::-webkit-scrollbar {
     width: 5px;
@@ -139,6 +141,7 @@ footer {
     margin-left: 20px;
     height: 600px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .side-container .recent-container .recent-item {
     height: 120px;
@@ -174,6 +177,18 @@ footer {
 .slide-right {
     animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+@media (max-width: 1200px) {
+    .main-container {
+        width: 65%;
+    }
+    .main-container .container {
+        grid-template-columns: repeat(4, 25%);
+    }
+    .main-container .container .item .poster {
+        width: 120px;
+        height: 165.6px;
+    }
+}
 @media (max-width: 500px) {
     .main-container {
         position: relative;
@@ -183,6 +198,7 @@ footer {
     }
     .main-container .main-title {
         justify-content: center;
+        width: 100%;
     }
     .main-container .container {
         display: block;
@@ -206,6 +222,7 @@ footer {
     }
     footer {
         top: 0;
+        opacity: 1;
     }
 }
 
@@ -244,6 +261,6 @@ footer {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(300px);
+        transform: translateX(100vw);
     }
 } /*# sourceMappingURL=index.css.map */

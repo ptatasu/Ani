@@ -25,9 +25,9 @@ footer {
 }
 
 .next {
-    position: absolute;
-    bottom: 58px;
-    right: 20px;
+    position: relative;
+    bottom: 40px;
+    left: calc(100vw - 170px);
 }
 
 .data {

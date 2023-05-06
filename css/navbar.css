@@ -63,6 +63,7 @@ body {
     padding: 0.5rem 2rem;
     position: absolute;
     left: 390px;
+    visibility: hidden;
 }
 .navbar .home:hover {
     background-color: var(--darkRed);
@@ -74,7 +75,7 @@ body {
     height: 5rem;
 }
 .navbar .search-bar {
-    margin: 0 auto 0 auto;
+    margin-right: 100px;
 }
 .navbar .search-bar .search {
     outline: none;
@@ -85,6 +86,7 @@ body {
     width: 15.625rem;
 }
 .navbar .profile {
+    max-width: 150px;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -123,7 +125,8 @@ body {
 .navbar .search-items {
     position: absolute;
     top: 57px;
-    right: 365px;
+    margin-right: 250px;
+    right: 50px;
     width: 15.625rem;
     z-index: 2;
     text-align: center;
@@ -207,9 +210,6 @@ footer .socials .contact a img {
     .navbar .logo img {
         height: 60px;
     }
-    .navbar .search-bar {
-        display: none;
-    }
     .navbar .profile {
         margin: 0;
     }
@@ -218,5 +218,27 @@ footer .socials .contact a img {
     }
     footer .socials .contact a {
         padding: 0;
+    }
+}
+@media (max-width: 850px) {
+    .navbar .search-bar {
+        display: none;
+    }
+    .navbar .search-items .search-item .search-poster,
+    .navbar .search-items .search-item .search-title,
+    .navbar .search-items {
+        visibility: hidden;
+        display: none;
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .navbar .dropdown {
+        margin-right: 150px;
+    }
+    .navbar .profile {
+        margin-right: 200px;
+    }
+    .navbar.search-items {
+        margin-right: 400px;
     }
 }

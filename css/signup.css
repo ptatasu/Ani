@@ -164,7 +164,7 @@
     grid-area: text;
     margin: 1.875rem 0;
 } /*# sourceMappingURL=signup.css.map */
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .form-container .subtext,
     .form-container .title {
         margin: 0;

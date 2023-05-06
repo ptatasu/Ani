@@ -152,6 +152,9 @@
     .container .details .description::before {
         display: none;
     }
+}
+
+@media (max-width: 1200px) {
     .container .details .side {
         display: none;
     }
